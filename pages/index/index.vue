@@ -25,7 +25,7 @@
 		<view style="display: flex;align-items: center;justify-content: center;">
 			<view style="flex: 1;display: flex;align-items: center;justify-content: center;">
 				<text class="gg-comment" style="color: #7b5aa6;margin-right: 20rpx;"></text>
-				<text>1</text>
+				<text>2</text>
 			</view>
 			<view style="flex: 1;display: flex;align-items: center;justify-content: center;">
 				<text class="gg-comment" style="color: #7b5aa6;margin-right: 20rpx;"></text>
