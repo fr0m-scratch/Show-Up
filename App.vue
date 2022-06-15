@@ -16,5 +16,6 @@
 	/*每个页面公共css */
 	@import "./common/uni.css";
 	@import "./common/animate.css";
-	@import "./common/all.css"
+	@import "./common/all.css";
+	@import "./common/free.css";
 </style>

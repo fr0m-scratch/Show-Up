@@ -1,9 +1,9 @@
 <template>
 	<view>
 		
-		<view style="padding: 20rpx;">
+		<view class="p-2">
 		<!-- 头像 关注 -->
-		<view style="display: flex;align-items: center;justify-content: space-between;">
+		<view class="flex align-center justify-between">
 			<view style="display: flex;align-items: center;">
 				<image src="../../static/Dr. Von Neumann.jpeg" style="width: 65rpx;height: 65rpx;border-radius: 100%;margin-right: 20rpx;" lazy-load></image>
 				<view>
@@ -16,7 +16,7 @@
 			</view>
 		</view>
 		<!-- //标题 -->
-		<view style="font-size: 30rpx;">标题</view>
+		<view style="font-size: 30rpx;margin: 10px 0;">标题</view>
 		<!-- //图片 -->
 		<view>
 			<image src="../../static/Dr. Von Neumann.jpeg" style="height: 350rpx; width: 100%; border-radius: 5rpx;"></image>
@@ -24,11 +24,11 @@
 		<!-- //按钮 -->
 		<view style="display: flex;align-items: center;justify-content: center;">
 			<view style="flex: 1;display: flex;align-items: center;justify-content: center;">
-				<text class="gg-comment" style="color: #7b5aa6;margin-right: 20rpx;"></text>
+				<text class="gg-heart" style="color: #7b5aa6;margin-right: 20rpx;"></text>
 				<text>2</text>
 			</view>
 			<view style="flex: 1;display: flex;align-items: center;justify-content: center;">
-				<text class="gg-comment" style="color: #7b5aa6;margin-right: 20rpx;"></text>
+				<text class="gg-smile-neutral" style="color: #7b5aa6;margin-right: 20rpx;"></text>
 				<text>1</text>
 			</view>
 			<view style="flex: 1;display: flex;align-items: center;justify-content: center;">
@@ -36,7 +36,7 @@
 				<text>1</text>
 			</view>
 			<view style="flex: 1;display: flex;align-items: center;justify-content: center;">
-				<text class="gg-comment" style="color: #7b5aa6;margin-right: 20rpx;"></text>
+				<text class="gg-share" style="color: #7b5aa6;margin-right: 20rpx;"></text>
 				<text>1</text>
 			</view>
 		</view>
