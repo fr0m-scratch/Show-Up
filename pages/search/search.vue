@@ -2,9 +2,9 @@
 	<view>
 		<template v-if="searchList.length === 0">
 			<!-- search history -->
-			<view class="py-2 font-md px-3">search history</view>
+			<view class="py-2 font-lg px-3 text-muted">search history</view>
 			<view class="flex flex-wrap">
-				<view class="border rounded font mx-2 my-1 px-2" 
+				<view class="border rounded font mx-1 my-1 px-2 text-muted" 
 				v-for="(item,index) in list":key="index"
 				hover-class="bg-light">{{item}}</view>
 			</view>

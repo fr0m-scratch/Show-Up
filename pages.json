@@ -12,7 +12,7 @@
 							"borderRadius": "18px",
 							"disabled": true,
 							"placeholder": "type to search",
-							"placeholderColor": "#ab82c5"
+							"placeholderColor": "#878695"
 						},
 					"buttons": [
 						{
@@ -91,7 +91,7 @@
 							"backgroundColor": "#F5f4f2",
 							"borderRadius": "18px",
 							"placeholder": "type to search",
-							"placeholderColor": "#ab82c5"
+							"placeholderColor": "#878695"
 						},
 					"buttons": [
 						{
