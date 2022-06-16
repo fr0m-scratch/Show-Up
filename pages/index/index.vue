@@ -36,7 +36,7 @@
 						userpic:"/static/Dr. Von Neumann.jpeg",
 						newstime:"日期 时间",
 						isFollow:false,
-						title:"我想说什么",
+						title:"这是一只猫咪",
 						titlepic:"/static/Dr. Von Neumann.jpeg",
 						support:{
 							type:"support",
