@@ -11,20 +11,14 @@
 			
 		</template>
 		
-		<!-- <template v-else> -->
-			<!-- 数据列表 -->
-			<!-- <block v-for = "(item,index) in searchList" :key="index">
-				<common-list :item="item :index="index></common-list>
-			</block> -->
-			
-		<!-- </template> -->
+		
 		
 	</view>
 </template>
 
 <script>
 	//等上一个组件完成
-	// import New from '@/components/common/common-list.vue';
+	import New from '@/components/common/common-list.vue';
 	export default {
 		
 		data() {
@@ -42,17 +36,17 @@
 			
 		},
 		//监听点击导航搜索按钮
-		// onNavigationBarButtonTap(e)  {
-		// 	if (e.index === 0) {
-		// 		this.searchEven()
-		// 	}
+		onNavigationBarButtonTap(e)  {
+			if (e.index === 0) {
+				this.searchEven()
+			}
 			
-		// },
+		},
 		methods: {
 			//搜索事件
-			// searchEvent(){
+			
 			// 	//收起键盘
-			// 	uni.hideKeyboard()
+				
 			// 	//请求搜索
 				
 				
