@@ -18,4 +18,5 @@
 	@import "./common/animate.css";
 	@import "./common/all.css";
 	@import "./common/free.css";
+	@import "./common/common.css";
 </style>
