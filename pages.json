@@ -81,6 +81,33 @@
             }
             
         }
+        ,{
+			"path" : "pages/search/search",
+			"style" : {
+				"app-plus": {
+					"titleNView": {
+						"searchInput": {
+							"align": "center",
+							"backgroundColor": "#F5f4f2",
+							"borderRadius": "18px",
+							"placeholder": "type to search",
+							"placeholderColor": "#ab82c5"
+						},
+					"buttons": [
+						{
+							"color": "#bbbbbb",
+							"colorPressed": "#823aac",
+							"float": "right",
+							"fontSize": "20px",
+							"text": "search"							
+							}
+					]
+					}
+				}
+				
+				
+			}
+		}
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
