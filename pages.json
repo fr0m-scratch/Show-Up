@@ -72,6 +72,15 @@
             }
             
         }
+        ,{
+            "path" : "components/common/divider",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
