@@ -21,7 +21,7 @@
 						userpic:"/static/Dr. Von Neumann.jpeg",
 						newstime:"日期 时间",
 						isFollow:false,
-						title:"王子殿下午茶餐厅",
+						title:"王子殿下午茶餐厅力考试",
 						titlepic:"/static/Dr. Von Neumann.jpeg",
 						support:{
 							type:"support",
