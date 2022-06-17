@@ -1,13 +1,53 @@
 {
   "pages": [
-    "pages/index/index"
+    "pages/index/index",
+    "pages/shop/shop",
+    "pages/msg/msg",
+    "pages/me/me",
+    "components/common/common-list",
+    "components/common/divider",
+    "pages/search/search",
+    "pages/add-input/add-input"
   ],
   "subPackages": [],
   "window": {
-    "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "uni-app",
-    "navigationBarBackgroundColor": "#F8F8F8",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "纽约社区交友",
+    "navigationBarBackgroundColor": "#7b5aa6",
     "backgroundColor": "#F8F8F8"
   },
-  "usingComponents": {}
+  "tabBar": {
+    "color": "#b8b8b8",
+    "backgroundColor": "#7b5aa6",
+    "borsderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "feed",
+        "iconPath": "./static/shop.png",
+        "selectedIconPath": "./static/shoped.png"
+      },
+      {
+        "pagePath": "pages/shop/shop",
+        "text": "thrift",
+        "iconPath": "./static/shop.png",
+        "selectedIconPath": "./static/shoped.png"
+      },
+      {
+        "pagePath": "pages/msg/msg",
+        "text": "message",
+        "iconPath": "./static/shop.png",
+        "selectedIconPath": "./static/shoped.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "me",
+        "iconPath": "./static/shop.png",
+        "selectedIconPath": "./static/shoped.png"
+      }
+    ]
+  },
+  "usingComponents": {
+    "divider": "/components/common/divider"
+  }
 }

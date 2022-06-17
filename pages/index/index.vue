@@ -9,7 +9,13 @@
 			:class="tabIndex === index?'text-main font-lg font-weight-bold' : ''"
 			@click="changeTab(index)">{{item.name}}</view>
 		</scroll-view>
-		
+		 
+		 <swiper :duration="500" :current="tabIndex">
+		   <swiper-item v-for="(item,index) in tabBars":key="index">
+		    <view class="swiper-item">{{item.name}}</view>
+		   </swiper-item>
+		  </swiper>
+		  
 		<!-- <block v-for="(item, index) in list" :key="index">
 			<common-list :item="item" :index="index"></common-list>
 			<divider></divider>
@@ -97,6 +103,11 @@
 				
 			})
 			
+		},
+		onNavigationBarButtonTap() {
+			uni.navigateTo({
+				url:'../add-input/add-input'
+			})
 		},
 		onLoad() {
 

@@ -1,0 +1,14 @@
+
+.box {
+	background-color: palegreen;
+	color: "black";
+	width: 350rpx;
+	height: 350rpx;
+	border-radius: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 50rpx
+}
+
+

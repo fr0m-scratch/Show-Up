@@ -1,0 +1,1 @@
+<view><view data-event-opts="{{[['tap',[['change']]]]}}" bindtap="__e">{{name}}</view></view>

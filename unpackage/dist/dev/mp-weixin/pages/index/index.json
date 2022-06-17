@@ -1,4 +1,5 @@
 {
-  "navigationBarTitleText": "uni-app",
-  "usingComponents": {}
+  "usingComponents": {
+    "common-list": "/components/common/common-list"
+  }
 }

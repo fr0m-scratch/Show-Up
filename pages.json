@@ -64,15 +64,6 @@
             
         }
         ,{
-            "path" : "components/common/common-list",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
             "path" : "components/common/divider",
             "style" :                                                                                    
             {
@@ -108,6 +99,16 @@
 				
 			}
 		}
+        ,{
+            "path" : "pages/add-input/add-input",
+            "style" :                                                                                    
+            {
+                "app-plus": {
+					"titleNView": false
+				}
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
@@ -123,26 +124,26 @@
 		"list": [{
 			"pagePath": "pages/index/index",
 			"text": "feed",
-			"iconPath": "./static/shop.PNG",
-			"selectedIconPath": "./static/shoped.PNG"
+			"iconPath": "./static/shop.png",
+			"selectedIconPath": "./static/shoped.png"
 		},
 		{
 			"pagePath": "pages/shop/shop",
 			"text": "thrift",
-			"iconPath": "./static/shop.PNG",
-			"selectedIconPath": "./static/shoped.PNG"
+			"iconPath": "./static/shop.png",
+			"selectedIconPath": "./static/shoped.png"
 		},
 		{
 			"pagePath": "pages/msg/msg",
 			"text": "message",
-			"iconPath": "./static/shop.PNG",
-			"selectedIconPath": "./static/shoped.PNG"
+			"iconPath": "./static/shop.png",
+			"selectedIconPath": "./static/shoped.png"
 		},
 		{
 			"pagePath": "pages/me/me",
 			"text": "me",
-			"iconPath": "./static/shop.PNG",
-			"selectedIconPath": "./static/shoped.PNG"
+			"iconPath": "./static/shop.png",
+			"selectedIconPath": "./static/shoped.png"
 		}
 		]
 		}

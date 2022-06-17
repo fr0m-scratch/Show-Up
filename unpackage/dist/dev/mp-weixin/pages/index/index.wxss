@@ -1,4 +1,9 @@
 
+.support-active{
+	color: #7b5aa6;
+}
+
+
 .content {
 	display: flex;
 	flex-direction: column;
