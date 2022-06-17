@@ -1,7 +1,8 @@
 <template>
 	<view>
 		<block v-for="(item, index) in list" :key="index">
-			<common-list :item="item" :index="index"></common-list>
+			<common-list :item="item" :index="index"
+			@follow="follow"></common-list>
 			<divider></divider>
 		</block>
 	</view>
@@ -61,7 +62,9 @@
 
 		},
 		methods: {
-
+			follow(e){
+				this.list[e].isFollow = !this.list[e].isFollow
+			}
 		}
 	}
 </script>

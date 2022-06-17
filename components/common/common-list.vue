@@ -15,6 +15,7 @@
 			</view>
 			<view class="flex align-center justify-center font rounded 
 			bg-main text-white animated faster" 
+			v-if="!item.isFollow"
 			hover-class="bounceIn" @click="follow"
 			style="width: 90rpx; height: 50rpx;">
 				关注
@@ -70,7 +71,7 @@
 				console.log("打开个人空间");
 			},
 			follow(){
-				console.log("关注");
+				this.$emit('follow',this.index);
 			},
 			openDetail(){
 				console.log("详情页");
