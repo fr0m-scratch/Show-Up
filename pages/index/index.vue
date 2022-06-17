@@ -3,23 +3,34 @@
 		<!-- 顶部选项卡 -->
 		<scroll-view scroll-x :scroll-into-view="scrollInto"
 		scroll-with-animation
-		class="scroll-row border-bottom">
+		class="scroll-row border-bottom" 
+		style="height: 120rpx;">
 			<view v-for="(item,index) in tabBars":key="index"
 			class="scroll-row-item px-5 py-2 font-md":id = "'tab'+index"
 			:class="tabIndex === index?'text-main font-lg font-weight-bold' : ''"
 			@click="changeTab(index)">{{item.name}}</view>
 		</scroll-view>
+
 		 
-		 <swiper :duration="500" :current="tabIndex">
-		   <swiper-item v-for="(item,index) in tabBars":key="index">
-		    <view class="swiper-item">{{item.name}}</view>
-		   </swiper-item>
-		  </swiper>
-		  
-		<!-- <block v-for="(item, index) in list" :key="index">
-			<common-list :item="item" :index="index"></common-list>
-			<divider></divider>
-		</block> -->
+
+		
+		<swiper :duration="500":current="tabIndex" @change="onChangeTab"
+		:style="'height:'+scrollH+'px;'">
+			<swiper-item v-for="(item,index) in newslist":key="index">
+				<scroll-view scroll-y="true":style="'height:' + scrollH + 'px;'">
+					
+					<block v-for="(item2, index2) in item.list" :key="index2">
+						<common-list :item="item2" :index="index2"></common-list>
+						<divider></divider>
+					</block>
+					
+				</scroll-view>
+				
+			</swiper-item>
+		</swiper>
+		
+
+
 	</view>
 </template>
 
@@ -31,6 +42,8 @@
 		},
 		data() {
 			return {
+				//列表高度
+				scrollH: 600,
 				//顶部选项卡
 				scrollInto: "",
 				tabIndex:0,
@@ -47,53 +60,11 @@
 				},{
 					name:'关注',
 				}],
-				list:[
-					{
-						username:"冯诺依曼博士",
-						userpic:"/static/Dr. Von Neumann.jpeg",
-						newstime:"日期 时间",
-						isFollow:false,
-						title:"王子殿下午茶餐厅力考试",
-						titlepic:"/static/Dr. Von Neumann.jpeg",
-						support:{
-							type:"support",
-							support_count:1,
-							unsupport_count:1
-						},
-						comment_count:2,
-						share_num:2
-					},
-					{
-						username:"冯诺依曼博士",
-						userpic:"/static/Dr. Von Neumann.jpeg",
-						newstime:"日期 时间",
-						isFollow:false,
-						title:"这是一只猫咪",
-						titlepic:"/static/Dr. Von Neumann.jpeg",
-						support:{
-							type:"support",
-							support_count:1,
-							unsupport_count:1
-						},
-						comment_count:2,
-						share_num:2
-					},
-					{
-						username:"冯诺依曼博士",
-						userpic:"/static/Dr. Von Neumann.jpeg",
-						newstime:"日期 时间",
-						isFollow:false,
-						title:"这是一只猫咪",
-						titlepic:"/static/Dr. Von Neumann.jpeg",
-						support:{
-							type:"",
-							support_count:1,
-							unsupport_count:1
-						},
-						comment_count:2,
-						share_num:2
-					}
-				]
+				newslist:[{
+							
+					}]
+					
+				
 			}
 		},
 		//监听点击导航栏搜索框
@@ -110,9 +81,79 @@
 			})
 		},
 		onLoad() {
+			uni.getSystemInfo({
+				success: res => {
+					this.scrollH = res.windowHeight - uni.upx2px(101)
+				}
+				
+			})
+			//根据选项生成列表
+			this.getData()
+			
 
 		},
 		methods: {
+			//获取数据
+			getData(){
+				var arr = []
+				for (let i = 0; i < this.tabBars.length; i++) {
+					let obj = {
+						list:[{
+							username:"冯诺依曼博士",
+							userpic:"/static/Dr. Von Neumann.jpeg",
+							newstime:"日期 时间",
+							isFollow:false,
+							title:"王子殿下午茶餐厅力考试",
+							titlepic:"/static/Dr. Von Neumann.jpeg",
+							support:{
+								type:"support",
+								support_count:1,
+								unsupport_count:1
+							},
+							comment_count:2,
+							share_num:2
+						},
+						{
+							username:"冯诺依曼博士",
+							userpic:"/static/Dr. Von Neumann.jpeg",
+							newstime:"日期 时间",
+							isFollow:false,
+							title:"这是一只猫咪",
+							titlepic:"/static/Dr. Von Neumann.jpeg",
+							support:{
+								type:"support",
+								support_count:1,
+								unsupport_count:1
+							},
+							comment_count:2,
+							share_num:2
+						},
+						{
+							username:"冯诺依曼博士",
+							userpic:"/static/Dr. Von Neumann.jpeg",
+							newstime:"日期 时间",
+							isFollow:false,
+							title:"这是一只猫咪",
+							titlepic:"/static/Dr. Von Neumann.jpeg",
+							support:{
+								type:"",
+								support_count:1,
+								unsupport_count:1
+							},
+							comment_count:2,
+							share_num:2,
+						}]
+					}
+					arr.push(obj)
+				}
+				this.newslist = arr
+				
+			},
+			//监听滑动
+			onChangeTab(e){
+				this.changeTab(e.detail.current)
+			},
+
 
 			follow(e){
 				this.list[e].isFollow = !this.list[e].isFollow
