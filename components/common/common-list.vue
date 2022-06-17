@@ -32,27 +32,27 @@
 		<view class="flex justify-center align-center">
 			<view class="flex justify-center align-center 
 			flex-1 animated faster" hover-class="bounceIn"
-			@click="doSupport('support')">
-				<text class="gg-heart mr-2 text-main" ></text>
-				<text>{{item.support.support_count}}</text>
+			@click="doSupport('support')" :class="item.support.type === 'support' ? 'text-main' : 'text-muted'">
+				<text class="gg-heart mr-2" ></text>
+				<text>{{item.support.support_count > 0 ? item.support.support_count : ""}}</text>
 			</view>
 			<view class="flex justify-center align-center 
 			flex-1 animated faster" hover-class="bounceIn"
-			@click="doSupport('unspport')">
-				<text class="gg-smile-neutral mr-2 text-main"></text>
-				<text>{{item.support.unsupport_count}}</text>
+			@click="doSupport('unsupport')" :class="item.support.type === 'unsupport' ? 'text-main' : 'text-muted'">
+				<text class="gg-smile-neutral mr-2"></text>
+				<text>{{item.support.unsupport_count> 0 ? item.support.unsupport_count : ""}}</text>
 			</view>
 			<view class="flex justify-center align-center 
-			flex-1 animated faster" hover-class="bounceIn"
+			flex-1 animated faster text-muted" hover-class="bounceIn"
 			@click="openDetail">
-				<text class="gg-comment mr-2 text-main"></text>
-				<text>{{item.comment_count}}</text>
+				<text class="gg-comment mr-2"></text>
+				<text>{{item.comment_count> 0 ? item.comment_count : ""}}</text>
 			</view>
 			<view class="flex justify-center align-center 
-			flex-1 animated faster" hover-class="bounceIn" 
+			flex-1 animated faster text-muted" hover-class="bounceIn" 
 			@click="openDetail">
-				<text class="gg-share mr-3 text-main"></text>
-				<text>{{item.share_num}}</text>
+				<text class="gg-share mr-3"></text>
+				<text>{{item.share_num> 0 ? item.share_num : ""}}</text>
 			</view>
 		</view>
 		</view>
@@ -77,8 +77,11 @@
 				console.log("详情页");
 			},
 			doSupport(type){
-				console.log(type);
-			},
+				this.$emit('doSupport',{
+					type:type,
+					index:this.index
+				});
+			}
 			
 				
 		}
@@ -86,5 +89,7 @@
 </script>
 
 <style>
-
+.support-active{
+	color: #7b5aa6;
+}
 </style>

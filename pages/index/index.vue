@@ -2,7 +2,7 @@
 	<view>
 		<block v-for="(item, index) in list" :key="index">
 			<common-list :item="item" :index="index"
-			@follow="follow"></common-list>
+			@follow="follow" @doSupport="doSupport"></common-list>
 			<divider></divider>
 		</block>
 	</view>
@@ -46,6 +46,21 @@
 						},
 						comment_count:2,
 						share_num:2
+					},
+					{
+						username:"冯诺依曼博士",
+						userpic:"/static/Dr. Von Neumann.jpeg",
+						newstime:"日期 时间",
+						isFollow:false,
+						title:"这是一只猫咪",
+						titlepic:"/static/Dr. Von Neumann.jpeg",
+						support:{
+							type:"",
+							support_count:1,
+							unsupport_count:1
+						},
+						comment_count:2,
+						share_num:2
 					}
 				]
 			}
@@ -64,6 +79,30 @@
 		methods: {
 			follow(e){
 				this.list[e].isFollow = !this.list[e].isFollow
+			},
+			doSupport(e){
+				let item = this.list[e.index]
+				if (item.support.type === ""){
+					item.support.type = e.type
+					item.support[e.type+'_count']++
+					return;
+				}
+				if (item.support.type === "support" && e.type === "unsupport"){
+					item.support.type = e.type;
+					item.support.support_count--;
+					item.support.unsupport_count++;
+					
+				} else if (item.support.type === "unsupport" && e.type === "support"){
+					item.support.type = e.type;
+					item.support.unsupport_count--;
+					item.support.support_count++;
+				}
+				else if (item.support.type === e.type){
+					item.support.type = "";
+					item.support[e.type+'_count']--;
+				}
+				
+				console.log(e.type)
 			}
 		}
 	}
