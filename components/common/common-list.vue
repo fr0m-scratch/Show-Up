@@ -13,8 +13,7 @@
 					style="color: #9d9589; line-height: 1.5;">{{item.newstime}}</text>
 				</view>
 			</view>
-			<view class="flex align-center justify-center font rounded 
-			bg-main text-white animated faster" 
+			<view class="flex align-center justify-center font rounded bg-main text-white animated faster" 
 			v-if="!item.isFollow"
 			hover-class="bounceIn" @click="follow"
 			style="width: 90rpx; height: 50rpx;">
@@ -30,26 +29,22 @@
 		</view>
 		<!-- //按钮 -->
 		<view class="flex justify-center align-center">
-			<view class="flex justify-center align-center 
-			flex-1 animated faster" hover-class="bounceIn"
+			<view class="flex justify-center align-center flex-1 animated faster" hover-class="bounceIn"
 			@click="doSupport('support')" :class="item.support.type === 'support' ? 'text-main' : 'text-muted'">
-				<text class="gg-heart mr-2" ></text>
+				<text class="gg-heart mr-2"></text>
 				<text>{{item.support.support_count > 0 ? item.support.support_count : ""}}</text>
 			</view>
-			<view class="flex justify-center align-center 
-			flex-1 animated faster" hover-class="bounceIn"
+			<view class="flex justify-center align-center flex-1 animated faster" hover-class="bounceIn"
 			@click="doSupport('unsupport')" :class="item.support.type === 'unsupport' ? 'text-main' : 'text-muted'">
 				<text class="gg-smile-neutral mr-2"></text>
 				<text>{{item.support.unsupport_count> 0 ? item.support.unsupport_count : ""}}</text>
 			</view>
-			<view class="flex justify-center align-center 
-			flex-1 animated faster text-muted" hover-class="bounceIn"
+			<view class="flex justify-center align-center flex-1 animated faster text-muted" hover-class="bounceIn"
 			@click="openDetail">
 				<text class="gg-comment mr-2"></text>
 				<text>{{item.comment_count> 0 ? item.comment_count : ""}}</text>
 			</view>
-			<view class="flex justify-center align-center 
-			flex-1 animated faster text-muted" hover-class="bounceIn" 
+			<view class="flex justify-center align-center flex-1 animated faster text-muted" hover-class="bounceIn" 
 			@click="openDetail">
 				<text class="gg-share mr-3"></text>
 				<text>{{item.share_num> 0 ? item.share_num : ""}}</text>
