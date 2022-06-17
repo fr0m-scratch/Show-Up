@@ -18,11 +18,18 @@
 		:style="'height:'+scrollH+'px;'">
 			<swiper-item v-for="(item,index) in newslist":key="index">
 				<scroll-view scroll-y="true":style="'height:' + scrollH + 'px;'">
-					
+					<!-- 列表 -->
 					<block v-for="(item2, index2) in item.list" :key="index2">
-						<common-list :item="item2" :index="index2"></common-list>
+						<!-- 列表样式 -->
+						<common-list :item="item2" :index="index2" @follow="follow" @doSupport="doSupport"></common-list>
+						<!-- 全局分割线 -->
 						<divider></divider>
 					</block>
+					<!-- 上拉加载 -->
+					<view class="flex align-center justify-center py-3">
+						<text class="font text-light-muted"
+						>{{item.loadmore}}</text>
+					</view>
 					
 				</scroll-view>
 				
@@ -97,7 +104,11 @@
 			getData(){
 				var arr = []
 				for (let i = 0; i < this.tabBars.length; i++) {
+					//生产列表模板
 					let obj = {
+						//1.上拉加载更多 2.加载中 3. 没有更多了
+						loadmore:"上拉加载更多",
+						
 						list:[{
 							username:"冯诺依曼博士",
 							userpic:"/static/Dr. Von Neumann.jpeg",
