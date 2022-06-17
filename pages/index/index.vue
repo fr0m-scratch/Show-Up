@@ -1,10 +1,19 @@
 <template>
 	<view>
-		<block v-for="(item, index) in list" :key="index">
-			<common-list :item="item" :index="index"
-			@follow="follow" @doSupport="doSupport"></common-list>
+		<!-- 顶部选项卡 -->
+		<scroll-view scroll-x :scroll-into-view="scrollInto"
+		scroll-with-animation
+		class="scroll-row border-bottom">
+			<view v-for="(item,index) in tabBars":key="index"
+			class="scroll-row-item px-5 py-2 font-md":id = "'tab'+index"
+			:class="tabIndex === index?'text-main font-lg font-weight-bold' : ''"
+			@click="changeTab(index)">{{item.name}}</view>
+		</scroll-view>
+		
+		<!-- <block v-for="(item, index) in list" :key="index">
+			<common-list :item="item" :index="index"></common-list>
 			<divider></divider>
-		</block>
+		</block> -->
 	</view>
 </template>
 
@@ -16,6 +25,22 @@
 		},
 		data() {
 			return {
+				//顶部选项卡
+				scrollInto: "",
+				tabIndex:0,
+				tabBars:[{
+					name:'关注',
+				},{
+					name:'关注',
+				},{
+					name:'关注',
+				},{
+					name:'关注',
+				},{
+					name:'关注',
+				},{
+					name:'关注',
+				}],
 				list:[
 					{
 						username:"冯诺依曼博士",
@@ -77,6 +102,7 @@
 
 		},
 		methods: {
+
 			follow(e){
 				this.list[e].isFollow = !this.list[e].isFollow
 			},
@@ -103,7 +129,20 @@
 				}
 				
 				console.log(e.type)
-			}
+			},
+
+			//切换顶部导航选项
+			changeTab(index){
+				if (this.tabIndex === index){
+					return;
+				}
+				this.tabIndex = index
+				//滚动到指定元素
+				this.scrollInto = 'tab' + index
+
+			},
+
+
 		}
 	}
 </script>
