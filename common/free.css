@@ -1,3 +1,8 @@
+/* #ifndef APP-PLUS-NVUE */
+/* scroll-view */
+.scroll-row{ width: 100%; white-space: nowrap; }
+.scroll-row-item{ display: inline-block!important; }
+/* #endif */
 /* 图标 */
 .iconfont{
     font-family:iconfont;
