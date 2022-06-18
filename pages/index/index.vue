@@ -26,10 +26,8 @@
 						<divider></divider>
 					</block>
 					<!-- 上拉加载 -->
-					<view class="flex align-center justify-center py-3">
-						<text class="font text-light-muted"
-						>{{item.loadmore}}</text>
-					</view>
+					<load-more :loadmore ="item.loadmore" ></load-more>
+					
 					
 				</scroll-view>
 				
@@ -42,10 +40,12 @@
 </template>
 
 <script>
-	import commonList from "@/components/common/common-list.vue"
+	import commonList from "@/components/common/common-list.vue";
+	import loadMore from '@/components/common/load-more.vue';
 	export default {
 		components:{
-			commonList
+			commonList,
+			loadMore
 		},
 		data() {
 			return {
