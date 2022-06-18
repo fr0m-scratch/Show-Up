@@ -204,7 +204,23 @@
 				this.scrollInto = 'tab' + index
 
 			},
-
+			//上拉加载更多
+			loadmore(index){
+				
+				//得到当前列表数据
+				let item = this.newsList[index]
+				//判断是否处于可加载状态
+				if 	(item.loadmore !== '上拉加载更多') return;			
+				//修改当前列表加载状态
+				item.loadmore = '加载中...'
+				//数据请求
+				setTimeout(()=>{
+					//加载页面的数据
+					item.list = [...item.list,...item.list]
+					//恢复加载状态
+					item.loadmore = '上拉加载更多'
+				},10000)
+			}
 
 		}
 	}
