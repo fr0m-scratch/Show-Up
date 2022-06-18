@@ -16,7 +16,7 @@
 		
 		<swiper :duration="500":current="tabIndex" @change="onChangeTab"
 		:style="'height:'+scrollH+'px;'">
-			<swiper-item v-for="(item,index) in newslist":key="index">
+			<swiper-item v-for="(item,index) in newsList":key="index">
 				<scroll-view scroll-y="true":style="'height:' + scrollH + 'px;'">
 					<!-- 列表 -->
 					<block v-for="(item2, index2) in item.list" :key="index2">
@@ -67,7 +67,7 @@
 				},{
 					name:'关注',
 				}],
-				newslist:[{
+				newsList:[{
 							
 					}]
 					
@@ -157,7 +157,7 @@
 					}
 					arr.push(obj)
 				}
-				this.newslist = arr
+				this.newsList = arr
 				
 			},
 			//监听滑动
