@@ -1,0 +1,11 @@
+<template>
+	<view class="flex flex-column align-center justify-center">
+		<text class="font-lg text-muted">什么都没有</text>
+	</view>
+</template>
+
+<script>
+</script>
+
+<style>
+</style>

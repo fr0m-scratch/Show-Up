@@ -18,15 +18,21 @@
 		:style="'height:'+scrollH+'px;'">
 			<swiper-item v-for="(item,index) in newsList":key="index">
 				<scroll-view scroll-y="true":style="'height:' + scrollH + 'px;'">
-					<!-- 列表 -->
-					<block v-for="(item2, index2) in item.list" :key="index2">
-						<!-- 列表样式 -->
-						<common-list :item="item2" :index="index2" @follow="follow" @doSupport="doSupport"></common-list>
-						<!-- 全局分割线 -->
-						<divider></divider>
-					</block>
-					<!-- 上拉加载 -->
-					<load-more :loadmore ="item.loadmore" ></load-more>
+					<template v-if="item.list.length > 0">
+						<!-- 列表 -->
+						<block v-for="(item2, index2) in item.list" :key="index2">
+							<!-- 列表样式 -->
+							<common-list :item="item2" :index="index2" @follow="follow" @doSupport="doSupport"></common-list>
+							<!-- 全局分割线 -->
+							<divider></divider>
+						</block>
+						<!-- 上拉加载 -->
+						<load-more :loadmore ="item.loadmore" ></load-more>
+					</template>
+					<!-- 无数据 -->
+					<template v-else>
+						<no-thing></no-thing>
+					</template>
 					
 					
 				</scroll-view>
@@ -40,6 +46,53 @@
 </template>
 
 <script>
+	const demo = [{
+		username:"冯诺依曼博士",
+		userpic:"/static/Dr. Von Neumann.jpeg",
+		newstime:"日期 时间",
+		isFollow:false,
+		title:"王子殿下午茶餐厅力考试",
+		titlepic:"/static/Dr. Von Neumann.jpeg",
+		support:{
+			type:"support",
+			support_count:1,
+			unsupport_count:1
+		},
+		comment_count:2,
+		share_num:2
+	},
+	{
+		username:"冯诺依曼博士",
+		userpic:"/static/Dr. Von Neumann.jpeg",
+		newstime:"日期 时间",
+		isFollow:false,
+		title:"这是一只猫咪",
+		titlepic:"/static/Dr. Von Neumann.jpeg",
+		support:{
+			type:"support",
+			support_count:1,
+			unsupport_count:1
+		},
+		comment_count:2,
+		share_num:2
+	},
+	{
+		username:"冯诺依曼博士",
+		userpic:"/static/Dr. Von Neumann.jpeg",
+		newstime:"日期 时间",
+		isFollow:false,
+		title:"这是一只猫咪",
+		titlepic:"/static/Dr. Von Neumann.jpeg",
+		support:{
+			type:"",
+			support_count:1,
+			unsupport_count:1
+		},
+		comment_count:2,
+		share_num:2,
+	}];
+	
+	
 	import commonList from "@/components/common/common-list.vue";
 	import loadMore from '@/components/common/load-more.vue';
 	export default {
@@ -109,52 +162,12 @@
 						//1.上拉加载更多 2.加载中 3. 没有更多了
 						loadmore:"上拉加载更多",
 						
-						list:[{
-							username:"冯诺依曼博士",
-							userpic:"/static/Dr. Von Neumann.jpeg",
-							newstime:"日期 时间",
-							isFollow:false,
-							title:"王子殿下午茶餐厅力考试",
-							titlepic:"/static/Dr. Von Neumann.jpeg",
-							support:{
-								type:"support",
-								support_count:1,
-								unsupport_count:1
-							},
-							comment_count:2,
-							share_num:2
-						},
-						{
-							username:"冯诺依曼博士",
-							userpic:"/static/Dr. Von Neumann.jpeg",
-							newstime:"日期 时间",
-							isFollow:false,
-							title:"这是一只猫咪",
-							titlepic:"/static/Dr. Von Neumann.jpeg",
-							support:{
-								type:"support",
-								support_count:1,
-								unsupport_count:1
-							},
-							comment_count:2,
-							share_num:2
-						},
-						{
-							username:"冯诺依曼博士",
-							userpic:"/static/Dr. Von Neumann.jpeg",
-							newstime:"日期 时间",
-							isFollow:false,
-							title:"这是一只猫咪",
-							titlepic:"/static/Dr. Von Neumann.jpeg",
-							support:{
-								type:"",
-								support_count:1,
-								unsupport_count:1
-							},
-							comment_count:2,
-							share_num:2,
-						}]
+						list:[]
 					}
+					if (i < 2) {
+						obj.list = demo
+					}
+					
 					arr.push(obj)
 				}
 				this.newsList = arr

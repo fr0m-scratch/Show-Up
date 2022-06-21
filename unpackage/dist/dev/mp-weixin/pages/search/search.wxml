@@ -1,0 +1,1 @@
+<view><block wx:if="{{searchList.length===0}}"><view class="py-2 font-lg px-3 text-muted">search history</view><view class="flex flex-wrap"><block wx:for="{{list}}" wx:for-item="item" wx:for-index="index" wx:key="index"><view class="border rounded font mx-1 my-1 px-2 text-muted" hover-class="bg-light">{{item}}</view></block></view></block></view>

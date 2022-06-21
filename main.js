@@ -7,6 +7,8 @@ Vue.config.productionTip = false
 
 import divider from "./components/common/divider.vue";
 Vue.component("divider", divider)
+import noThing from "./components/common/no-thing.vue";
+Vue.component("no-thing", noThing)
 
 App.mpType = 'app'
 const app = new Vue({
