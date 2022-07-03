@@ -109,6 +109,15 @@
             }
             
         }
+        ,{
+            "path" : "components/common/upload-image",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
