@@ -1,0 +1,12 @@
+
+.cell-pd {
+	padding: 22rpx 30rpx;
+}
+.list-pd {
+	margin-top: 50rpx;
+}
+.del-pos{
+	top: 10rpx;
+	right: 10rpx;
+}
+

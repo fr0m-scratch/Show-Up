@@ -9,12 +9,11 @@
 		<!-- 输入框 -->
 		<textarea value="" placeholder="来说点什么吧~" class="uni-textarea px-2" v-model="content"></textarea>
 		<!-- 多图上传 -->
-		<upload-image @change="changeImage"></upload-image>
+		<upload-image @change="changeImage" :list= "imageList"></upload-image>
 		<!-- 底部栏 -->
 		<view class="fixed-bottom bg-white flex align-center" style="height: 85rpx;">
 			<view class="gg-menu-cake m-3"></view>
 			<view class="gg-tag m-3"></view>
-			<view class="gg-attachment m-3"></view>
 			
 			<view class="bg-main text-white ml-auto flex justify-center align-center rounded mr-2" style="width: 140rpx;height: 60rpx;">发送</view>
 		</view>
@@ -34,8 +33,8 @@
 		data() {
 			return {
 				content:"",
-				imageList:[],
-				showBack:false
+				showBack:false,
+				imageList:[]
 			}
 		},
 		onBackPress(){
@@ -48,20 +47,51 @@
 					confirmText: '保存',
 					success: res => {
 						if (res.confirm){
-							console.log('保存');
-							this.showBack=true
-						} 
+							this.store()
+						} else {
+							uni.removeStorage({
+								key:"add-input"
+							})
+						}
 						uni.navigateBack({
 							delta: 1
 						});
 					},
 				});
+				this.showBack=true
 				return true
 			}
 		},
+		onLoad(){
+			uni.getStorage({
+				key:"add-input",
+				success:(res)=>{
+					if (res.data) {
+						let result = JSON.parse(res.data)
+						this.content = result.content;
+						this.imageList = result.imageList
+					}
+				}
+			})
+		},
 		methods: {
+			iconClickEvent(e){
+				switch(e){
+					
+				}
+			},
 			changeImage(e){
 				this.imageList = e;
+			},
+			store(){
+				uni.setStorage({
+					key:'add-input',
+					data:JSON.stringify({
+						content:this.content,
+						imageList:this.imageList
+					})
+				})
+				
 			},
 		}
 	}

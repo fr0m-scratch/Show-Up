@@ -7,7 +7,8 @@
     "components/common/common-list",
     "components/common/divider",
     "pages/search/search",
-    "pages/add-input/add-input"
+    "pages/add-input/add-input",
+    "components/common/upload-image"
   ],
   "subPackages": [],
   "window": {
