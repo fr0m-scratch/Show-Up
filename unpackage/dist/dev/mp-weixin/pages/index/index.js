@@ -236,6 +236,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
 var _commonList = _interopRequireDefault(__webpack_require__(/*! @/components/common/common-list.vue */ 23));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _toConsumableArray(arr) {return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();}function _nonIterableSpread() {throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _unsupportedIterableToArray(o, minLen) {if (!o) return;if (typeof o === "string") return _arrayLikeToArray(o, minLen);var n = Object.prototype.toString.call(o).slice(8, -1);if (n === "Object" && o.constructor) n = o.constructor.name;if (n === "Map" || n === "Set") return Array.from(o);if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);}function _iterableToArray(iter) {if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter);}function _arrayWithoutHoles(arr) {if (Array.isArray(arr)) return _arrayLikeToArray(arr);}function _arrayLikeToArray(arr, len) {if (len == null || len > arr.length) len = arr.length;for (var i = 0, arr2 = new Array(len); i < len; i++) {arr2[i] = arr[i];}return arr2;} //
 //
 //
@@ -283,19 +286,22 @@ var _commonList = _interopRequireDefault(__webpack_require__(/*! @/components/co
 //
 //
 //
-var demo = [{ username: "冯诺依曼博士", userpic: "/static/Dr. Von Neumann.jpeg", newstime: "日期 时间", isFollow: false, title: "王子殿下午茶餐厅力考试", titlepic: "/static/Dr. Von Neumann.jpeg", support: { type: "support", support_count: 1, unsupport_count: 1 }, comment_count: 2, share_num: 2 }, { username: "冯诺依曼博士", userpic: "/static/Dr. Von Neumann.jpeg", newstime: "日期 时间", isFollow: false, title: "这是一只猫咪", titlepic: "/static/Dr. Von Neumann.jpeg", support: { type: "support", support_count: 1, unsupport_count: 1 }, comment_count: 2, share_num: 2 }, { username: "冯诺依曼博士", userpic: "/static/Dr. Von Neumann.jpeg", newstime: "日期 时间", isFollow: false, title: "这是一只猫咪", titlepic: "/static/Dr. Von Neumann.jpeg", support: { type: "", support_count: 1, unsupport_count: 1 }, comment_count: 2, share_num: 2 }];var loadMore = function loadMore() {__webpack_require__.e(/*! require.ensure | components/common/load-more */ "components/common/load-more").then((function () {return resolve(__webpack_require__(/*! @/components/common/load-more.vue */ 85));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default = { components: { commonList: _commonList.default, loadMore: loadMore }, data: function data() {return { //列表高度
+//
+//
+//
+var demo = [{ username: "冯诺依曼博士", userpic: "/static/Dr. Von Neumann.jpeg", newstime: "日期 时间", isFollow: false, title: "王子殿下午茶餐厅力考试", titlepic: "/static/Dr. Von Neumann.jpeg", support: { type: "support", support_count: 1, unsupport_count: 1 }, comment_count: 2, share_num: 2 }, { username: "冯诺依曼博士", userpic: "/static/Dr. Von Neumann.jpeg", newstime: "日期 时间", isFollow: false, title: "这是一只猫咪", titlepic: "/static/Dr. Von Neumann.jpeg", support: { type: "support", support_count: 1, unsupport_count: 1 }, comment_count: 2, share_num: 2 }, { username: "冯诺依曼博士", userpic: "/static/Dr. Von Neumann.jpeg", newstime: "日期 时间", isFollow: false, title: "这是一只猫咪", titlepic: "/static/Dr. Von Neumann.jpeg", support: { type: "", support_count: 1, unsupport_count: 1 }, comment_count: 2, share_num: 2 }];var loadMore = function loadMore() {__webpack_require__.e(/*! require.ensure | components/common/load-more */ "components/common/load-more").then((function () {return resolve(__webpack_require__(/*! @/components/common/load-more.vue */ 85));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var uniSearchBar = function uniSearchBar() {Promise.all(/*! require.ensure | components/uni-ui/uni-search-bar/uni-search-bar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/uni-ui/uni-search-bar/uni-search-bar")]).then((function () {return resolve(__webpack_require__(/*! @/components/uni-ui/uni-search-bar/uni-search-bar.vue */ 90));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var uniFab = function uniFab() {__webpack_require__.e(/*! require.ensure | components/uni-ui/uni-fab/uni-fab */ "components/uni-ui/uni-fab/uni-fab").then((function () {return resolve(__webpack_require__(/*! @/components/uni-ui/uni-fab/uni-fab.vue */ 101));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var uniStatusBar = function uniStatusBar() {__webpack_require__.e(/*! require.ensure | components/uni-ui/uni-nav-bar/uni-status-bar */ "components/uni-ui/uni-nav-bar/uni-status-bar").then((function () {return resolve(__webpack_require__(/*! @/components/uni-ui/uni-nav-bar/uni-status-bar.vue */ 123));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default = { components: { commonList: _commonList.default, loadMore: loadMore, uniSearchBar: uniSearchBar, uniFab: uniFab, uniStatusBar: uniStatusBar }, data: function data() {return { fabPattern: { buttonColor: "#7b5aa6" }, //列表高度
       scrollH: 600, //顶部选项卡
-      scrollInto: "", tabIndex: 0, tabBars: [{ name: '关注' }, { name: '关注' }, { name: '关注' }, { name: '关注' }, { name: '关注' }, { name: '关注' }], newsList: [{}] };}, //监听点击导航栏搜索框
-  onNavigationBarSearchInputClicked: function onNavigationBarSearchInputClicked() {uni.navigateTo({ url: '../search/search' });}, onNavigationBarButtonTap: function onNavigationBarButtonTap() {uni.navigateTo({ url: '../add-input/add-input' });}, onLoad: function onLoad() {var _this = this;uni.getSystemInfo({ success: function success(res) {_this.scrollH = res.windowHeight - uni.upx2px(101);
-      } });
-
-
-    //根据选项生成列表
+      scrollInto: "", tabIndex: 0, tabBars: [{ name: '关注' }, { name: '关注' }, { name: '关注' }, { name: '关注' }, { name: '关注' }, { name: '关注' }], newsList: [{}], showCase: false };}, //监听点击导航栏搜索框
+  onLoad: function onLoad() {var _this = this;uni.getSystemInfo({ success: function success(res) {_this.scrollH = res.windowHeight - uni.upx2px(101);} }); //根据选项生成列表
     this.getData();
-
 
   },
   methods: {
+    addInput: function addInput() {
+      uni.navigateTo({
+        url: '../add-input/add-input' });
+
+    },
     //获取数据
     getData: function getData() {
       var arr = [];
@@ -376,6 +382,11 @@ var demo = [{ username: "冯诺依曼博士", userpic: "/static/Dr. Von Neumann.
         //恢复加载状态
         item.loadmore = '上拉加载更多';
       }, 10000);
+    },
+    search: function search() {
+      uni.navigateTo({
+        url: '../search/search' });
+
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

@@ -1,5 +1,9 @@
 <template>
 	<view>
+		<uniStatusBar></uniStatusBar>
+		<uni-search-bar placeholder="Type to search"></uni-search-bar>
+		
+			
 		<template v-if="searchList.length === 0">
 			<!-- search history -->
 			<view class="py-2 font-lg px-3 text-muted">search history</view>
@@ -68,9 +72,15 @@
 		share_num:2,
 	}];
 	import commonList from '@/components/common/common-list.vue';
+	import uniSearchBar from "@/components/uni-ui/uni-search-bar/uni-search-bar.vue";
+	import uniNavBar from "@/components/uni-ui/uni-nav-bar/uni-nav-bar.vue";
+	import uniStatusBar from "@/components/uni-ui/uni-nav-bar/uni-status-bar.vue"
 	export default {
 		components:{
-			commonList
+			commonList,
+			uniSearchBar,
+			uniNavBar,
+			uniStatusBar
 		},
 		data() {
 			return {

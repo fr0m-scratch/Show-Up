@@ -155,8 +155,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-var _uploadImage = _interopRequireDefault(__webpack_require__(/*! @/components/common/upload-image.vue */ 66));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var uniNavBar = function uniNavBar() {__webpack_require__.e(/*! require.ensure | components/uni-ui/uni-nav-bar/uni-nav-bar */ "components/uni-ui/uni-nav-bar/uni-nav-bar").then((function () {return resolve(__webpack_require__(/*! @/components/uni-ui/uni-nav-bar/uni-nav-bar.vue */ 90));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var uniIcons = function uniIcons() {Promise.all(/*! require.ensure | components/uni-ui/uni-icons/uni-icons */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/uni-ui/uni-icons/uni-icons")]).then((function () {return resolve(__webpack_require__(/*! @/components/uni-ui/uni-icons/uni-icons.vue */ 97));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+var _uploadImage = _interopRequireDefault(__webpack_require__(/*! @/components/common/upload-image.vue */ 66));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var uniNavBar = function uniNavBar() {__webpack_require__.e(/*! require.ensure | components/uni-ui/uni-nav-bar/uni-nav-bar */ "components/uni-ui/uni-nav-bar/uni-nav-bar").then((function () {return resolve(__webpack_require__(/*! @/components/uni-ui/uni-nav-bar/uni-nav-bar.vue */ 108));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var uniIcons = function uniIcons() {Promise.all(/*! require.ensure | components/uni-ui/uni-icons/uni-icons */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/uni-ui/uni-icons/uni-icons")]).then((function () {return resolve(__webpack_require__(/*! @/components/uni-ui/uni-icons/uni-icons.vue */ 115));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 {
   components: {
     uniNavBar: uniNavBar,
@@ -166,8 +165,8 @@ var _uploadImage = _interopRequireDefault(__webpack_require__(/*! @/components/c
   data: function data() {
     return {
       content: "",
-      imageList: [],
-      showBack: false };
+      showBack: false,
+      imageList: [] };
 
   },
   onBackPress: function onBackPress() {var _this = this;
@@ -181,17 +180,38 @@ var _uploadImage = _interopRequireDefault(__webpack_require__(/*! @/components/c
         success: function success(res) {
           if (res.confirm) {
             _this.store();
-            _this.showBack = true;
+          } else {
+            uni.removeStorage({
+              key: "add-input" });
+
           }
           uni.navigateBack({
             delta: 1 });
 
         } });
 
+      this.showBack = true;
       return true;
     }
   },
+  onLoad: function onLoad() {var _this2 = this;
+    uni.getStorage({
+      key: "add-input",
+      success: function success(res) {
+        if (res.data) {
+          var result = JSON.parse(res.data);
+          _this2.content = result.content;
+          _this2.imageList = result.imageList;
+        }
+      } });
+
+  },
   methods: {
+    iconClickEvent: function iconClickEvent(e) {
+      switch (e) {}
+
+
+    },
     changeImage: function changeImage(e) {
       this.imageList = e;
     },
@@ -201,6 +221,7 @@ var _uploadImage = _interopRequireDefault(__webpack_require__(/*! @/components/c
         data: JSON.stringify({
           content: this.content,
           imageList: this.imageList }) });
+
 
 
     } } };exports.default = _default;
@@ -359,9 +380,15 @@ var sourceType = [
 var sizeType = [
 ['compressed'],
 ['original'],
-['compressed', 'original']];var _default =
+['compressed', 'original']];var _default2 =
 
 {
+  props: {
+    list: {
+      type: Array,
+      default: function _default() {return [];} } },
+
+
   data: function data() {
     return {
       title: 'choose/previewImage',
@@ -373,6 +400,10 @@ var sizeType = [
       countIndex: 8,
       count: [1, 2, 3, 4, 5, 6, 7, 8, 9] };
 
+  },
+  onReady: function onReady() {
+    console.log(this.list);
+    this.imageList = this.list;
   },
   onUnload: function onUnload() {
     this.imageList = [],
@@ -526,7 +557,7 @@ var sizeType = [
                 }return _context2.abrupt("return",
 
                 status);case 13:case "end":return _context2.stop();}}}, _callee2);}))();
-    } } };exports.default = _default;
+    } } };exports.default = _default2;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),

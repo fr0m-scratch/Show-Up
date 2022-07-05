@@ -151,9 +151,15 @@ var sourceType = [
 var sizeType = [
 ['compressed'],
 ['original'],
-['compressed', 'original']];var _default =
+['compressed', 'original']];var _default2 =
 
 {
+  props: {
+    list: {
+      type: Array,
+      default: function _default() {return [];} } },
+
+
   data: function data() {
     return {
       title: 'choose/previewImage',
@@ -165,6 +171,10 @@ var sizeType = [
       countIndex: 8,
       count: [1, 2, 3, 4, 5, 6, 7, 8, 9] };
 
+  },
+  onReady: function onReady() {
+    console.log(this.list);
+    this.imageList = this.list;
   },
   onUnload: function onUnload() {
     this.imageList = [],
@@ -318,7 +328,7 @@ var sizeType = [
                 }return _context2.abrupt("return",
 
                 status);case 13:case "end":return _context2.stop();}}}, _callee2);}))();
-    } } };exports.default = _default;
+    } } };exports.default = _default2;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),

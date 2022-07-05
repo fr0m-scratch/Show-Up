@@ -12,10 +12,7 @@
   ],
   "subPackages": [],
   "window": {
-    "navigationBarTextStyle": "white",
-    "navigationBarTitleText": "纽约社区交友",
-    "navigationBarBackgroundColor": "#7b5aa6",
-    "backgroundColor": "#F8F8F8"
+    "navigationStyle": "custom"
   },
   "tabBar": {
     "color": "#b8b8b8",

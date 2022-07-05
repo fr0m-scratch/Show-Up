@@ -4,26 +4,7 @@
 			"path": "pages/index/index",
 			"style": 
 			{
-				"app-plus": {
-					"titleNView": {
-						"searchInput": {
-							"align": "center",
-							"backgroundColor": "#F5f4f2",
-							"borderRadius": "18px",
-							"disabled": true,
-							"placeholder": "type to search",
-							"placeholderColor": "#878695"
-						},
-					"buttons": [
-						{
-							"color": "#bbbbbb",
-							"colorPressed": "#009b8a",
-							"float": "right",
-							"fontSize": "26px",
-							"type": "share"							}
-					]
-					}
-				}
+				
 				 
 			}
 		}
@@ -78,26 +59,6 @@
         ,{
 			"path" : "pages/search/search",
 			"style" : {
-				"app-plus": {
-					"titleNView": {
-						"searchInput": {
-							"align": "center",
-							"backgroundColor": "#F5f4f2",
-							"borderRadius": "18px",
-							"placeholder": "type to search",
-							"placeholderColor": "#878695"
-						},
-					"buttons": [
-						{
-							"color": "#bbbbbb",
-							"colorPressed": "#823aac",
-							"float": "right",
-							"fontSize": "20px",
-							"text": "search"							
-							}
-					]
-					}
-				}
 				
 				
 			}
@@ -124,10 +85,7 @@
         
     ],
 	"globalStyle": {
-		"navigationBarTextStyle": "white",
-		"navigationBarTitleText": "纽约社区交友",
-		"navigationBarBackgroundColor": "#7b5aa6",
-		"backgroundColor": "#F8F8F8"
+		"navigationStyle": "custom"
 		
 	},
 	"tabBar": {

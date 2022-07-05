@@ -128,20 +128,55 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
-//
-//
-//
-//
-//
-var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var uniNavBar = function uniNavBar() {__webpack_require__.e(/*! require.ensure | components/uni-ui/uni-nav-bar/uni-nav-bar */ "components/uni-ui/uni-nav-bar/uni-nav-bar").then((function () {return resolve(__webpack_require__(/*! @/components/uni-ui/uni-nav-bar/uni-nav-bar.vue */ 108));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 {
+  components: {
+    uniNavBar: uniNavBar },
+
   data: function data() {
-    return {};
+    return {
+      tabIndex: 0,
+      tabBar: [{
+        name: "关注" },
+      {
+        name: "话题" }] };
+
 
 
   },
-  methods: {} };exports.default = _default;
+  methods: {
+    //打开发布
+    openAddInput: function openAddInput() {
+      uni.navigateTo({
+        url: '../add-input/add-input' });
+
+    },
+    //打开选项卡
+    changeTab: function changeTab(index) {
+      this.tabIndex = index;
+
+    } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ })
 

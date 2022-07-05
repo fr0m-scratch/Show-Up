@@ -1,6 +1,9 @@
 {
   "usingComponents": {
     "common-list": "/components/common/common-list",
-    "load-more": "/components/common/load-more"
+    "load-more": "/components/common/load-more",
+    "uni-search-bar": "/components/uni-ui/uni-search-bar/uni-search-bar",
+    "uni-fab": "/components/uni-ui/uni-fab/uni-fab",
+    "uni-status-bar": "/components/uni-ui/uni-nav-bar/uni-status-bar"
   }
 }

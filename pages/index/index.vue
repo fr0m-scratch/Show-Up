@@ -1,5 +1,8 @@
 <template>
 	<view>
+		<!-- 搜索栏 -->
+		<uni-status-bar></uni-status-bar>
+		<uni-search-bar @click.native="search" placeholder="Type to search" cancelButton="none" :showCase="showCase"></uni-search-bar>
 		<!-- 顶部选项卡 -->
 		<scroll-view scroll-x :scroll-into-view="scrollInto"
 		scroll-with-animation
@@ -40,7 +43,7 @@
 			</swiper-item>
 		</swiper>
 		
-
+		<uni-fab horizontal="right" vertical="bottom" :pattern="fabPattern" @fabClick="addInput"></uni-fab>
 
 	</view>
 </template>
@@ -95,13 +98,22 @@
 	
 	import commonList from "@/components/common/common-list.vue";
 	import loadMore from '@/components/common/load-more.vue';
+	import uniSearchBar from "@/components/uni-ui/uni-search-bar/uni-search-bar.vue"
+	import uniFab from "@/components/uni-ui/uni-fab/uni-fab.vue"
+	import uniStatusBar from "@/components/uni-ui/uni-nav-bar/uni-status-bar.vue"
 	export default {
 		components:{
 			commonList,
-			loadMore
+			loadMore,
+			uniSearchBar,
+			uniFab,
+			uniStatusBar
 		},
 		data() {
 			return {
+				fabPattern:{
+					buttonColor: "#7b5aa6"
+				},
 				//列表高度
 				scrollH: 600,
 				//顶部选项卡
@@ -122,24 +134,13 @@
 				}],
 				newsList:[{
 							
-					}]
+					}],
+				showCase: false
 					
 				
 			}
 		},
 		//监听点击导航栏搜索框
-		onNavigationBarSearchInputClicked() {
-			uni.navigateTo({
-				url: '../search/search',
-				
-			})
-			
-		},
-		onNavigationBarButtonTap() {
-			uni.navigateTo({
-				url:'../add-input/add-input'
-			})
-		},
 		onLoad() {
 			uni.getSystemInfo({
 				success: res => {
@@ -153,6 +154,11 @@
 
 		},
 		methods: {
+			addInput(){
+				uni.navigateTo({
+					url:'../add-input/add-input'
+				})
+			},
 			//获取数据
 			getData(){
 				var arr = []
@@ -233,6 +239,11 @@
 					//恢复加载状态
 					item.loadmore = '上拉加载更多'
 				},10000)
+			},
+			search(){
+				uni.navigateTo({
+					url: '../search/search',
+				})
 			}
 
 		}
