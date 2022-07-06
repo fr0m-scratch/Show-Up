@@ -29,7 +29,31 @@
 			<!-- 话题 --> 
 			<swiper-item>
 				<scroll-view scroll-y="true":style="'height:' + scrollH + 'px;'">
-					<view>huati</view>
+
+					<!-- 热门 -->
+					<hot-cat :hotCat="hotCat"></hot-cat>
+					<!-- 搜索框 -->
+					<view class="p-2">
+						<view class="bg-light rounded flex align-center justify-between py-2">
+							<uni-icons type="search"></uni-icons>
+							
+						</view>
+					</view>
+					<!-- 轮播图 -->
+					<swiper class="px-5 pb-2" :indicator-dots="true" :autoplay="true" 
+					:interval="3000" :duration="1000">
+						<swiper-item>
+							<image src="/static/Dr. Von Neumann.jpeg"
+							style="height: 300rpx;" class="w-100 rounded"></image>
+						</swiper-item>
+					</swiper>
+					<divider></divider>
+					<!-- 最近更新-->
+					<view class="font-md p-2">最近更新</view>
+					<!-- 话题列表组件 -->
+					<block v-for="(item,index) in topicList" :key="index">
+						<topic-list :item="item" :index="index"></topic-list>
+					</block>
 			
 				</scroll-view>
 			</swiper-item>
@@ -83,11 +107,17 @@
 		comment_count:2,
 		share_num:2,
 	}];
+	import topicList from "@/components/shop/topicList.vue";
+	import hotCat from "@/components/shop/hot-cat.vue";
+	import uniIcons from "@/components/uni-ui/uni-icons/uni-icons.vue";
 	import uniNavBar from "@/components/uni-ui/uni-nav-bar/uni-nav-bar.vue";
 	import loadMore from "@/components/common/load-more.vue";
 	import commonList from "@/components/common/common-list.vue";
 	export default {
 		components: {
+			topicList,
+			hotCat,
+			uniIcons,
 			uniNavBar,
 			loadMore,
 			commonList
@@ -103,7 +133,48 @@
 					name:"话题"
 				}],
 				list:[ ],
-				loadmore:"上拉加载更多"
+				loadmore:"上拉加载更多",
+				
+				hotCat:[{
+					name:"关注"
+				},{
+					name:"推荐"
+				},{
+					name:"周围"
+				},{
+					name:"测试"
+				},{
+					name:"测试"
+				},{
+					name:"测试"
+				}],
+				
+				topicList:[{
+					cover:"/static/Dr. Von Neumann.jpeg",
+					title:"话题名称",
+					desc:"话题描述",
+					news_count:10
+				
+				},{
+					cover:"/static/Dr. Von Neumann.jpeg",
+					title:"话题名称",
+					desc:"话题描述",
+					news_count:10
+					
+					
+				},{
+					cover:"/static/Dr. Von Neumann.jpeg",
+					title:"话题名称",
+					desc:"话题描述",
+					news_count:10
+				
+				},{
+					cover:"/static/Dr. Von Neumann.jpeg",
+					title:"话题名称",
+					desc:"话题描述",
+					news_count:10
+				
+				}]
 			}
 		},
 		onLoad() {
