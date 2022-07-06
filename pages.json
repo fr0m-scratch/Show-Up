@@ -83,6 +83,14 @@
             
         }
         
+        ,{
+            "path" : "pages/topic-nav/topic-nav",
+            "style" :{
+				"navigationBarTitleText": "话题分类"
+			}                                                                                  
+            
+            
+        }
     ],
 	"globalStyle": {
 		"navigationStyle": "custom"

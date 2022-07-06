@@ -22,7 +22,9 @@
 		props:['hotCat'],
 		methods:{
 			openMore(){
-				console.log('more');
+				uni.navigateTo({
+					url:'/pages/topic-nav/topic-nav',
+				});
 			},
 			openDetail(item) {
 				console.log('huati');
