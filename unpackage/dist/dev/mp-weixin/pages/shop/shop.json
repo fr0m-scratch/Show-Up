@@ -1,6 +1,11 @@
 {
   "enablePullDownRefresh": false,
   "usingComponents": {
-    "uni-nav-bar": "/components/uni-ui/uni-nav-bar/uni-nav-bar"
+    "topic-list": "/components/shop/topicList",
+    "hot-cat": "/components/shop/hot-cat",
+    "uni-icons": "/components/uni-ui/uni-icons/uni-icons",
+    "uni-nav-bar": "/components/uni-ui/uni-nav-bar/uni-nav-bar",
+    "load-more": "/components/common/load-more",
+    "common-list": "/components/common/common-list"
   }
 }
