@@ -69,7 +69,9 @@
 				this.$emit('follow',this.index);
 			},
 			openDetail(){
-				console.log("详情页");
+				uni.navigateTo({
+					url:'/pages/detail/detail?detail=' +  JSON.stringify(this.item)
+				})
 			},
 			doSupport(type){
 				this.$emit('doSupport',{

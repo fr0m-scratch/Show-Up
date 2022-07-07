@@ -25,7 +25,8 @@
 /* 透明度 */
 /* 文章场景相关 */
 .uni-nav-bar-text.data-v-c771aaf4 {
-  font-size: 14px;
+  font-size: 17px;
+  font-weight: 400;
 }
 .uni-nav-bar-right-text.data-v-c771aaf4 {
   font-size: 12px;

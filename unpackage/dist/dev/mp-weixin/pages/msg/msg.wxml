@@ -1,1 +1,1 @@
-<view><view data-event-opts="{{[['tap',[['change']]]]}}" bindtap="__e">{{name}}</view></view>
+<view><uni-nav-bar vue-id="353d4f88-1" backgroundColor="#7b5aa6" color="#cbd3da" title="消息" leftIcon="person" rightIcon="more-filled" bind:__l="__l"></uni-nav-bar><view class="flex align-center"></view></view>

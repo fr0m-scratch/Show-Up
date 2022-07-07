@@ -8,7 +8,9 @@
     "components/common/divider",
     "pages/search/search",
     "pages/add-input/add-input",
-    "components/common/upload-image"
+    "components/common/upload-image",
+    "pages/topic-nav/topic-nav",
+    "pages/detail/detail"
   ],
   "subPackages": [],
   "window": {
@@ -34,8 +36,8 @@
       {
         "pagePath": "pages/msg/msg",
         "text": "message",
-        "iconPath": "./static/shop.png",
-        "selectedIconPath": "./static/shoped.png"
+        "iconPath": "static/imessage.png",
+        "selectedIconPath": "static/icons8-messages-50.png"
       },
       {
         "pagePath": "pages/me/me",
