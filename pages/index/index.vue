@@ -245,7 +245,6 @@
 					url: '../search/search',
 				})
 			}
-
 		}
 	}
 </script>

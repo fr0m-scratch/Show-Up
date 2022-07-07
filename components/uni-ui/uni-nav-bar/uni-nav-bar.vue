@@ -205,7 +205,8 @@
 		font-size: 34rpx;
 		/* #endif */
 		/* #ifndef APP-PLUS */
-		font-size: 14px;
+		font-size: 17px;
+		font-weight: 400; 
 		/* #endif */
 	}
 
