@@ -11,7 +11,8 @@
     "components/common/upload-image",
     "pages/topic-nav/topic-nav",
     "pages/detail/detail",
-    "pages/user-list/user-list"
+    "pages/user-list/user-list",
+    "pages/user-chat/user-chat"
   ],
   "subPackages": [],
   "window": {
@@ -53,5 +54,6 @@
   "usingComponents": {
     "divider": "/components/common/divider",
     "no-thing": "/components/common/no-thing"
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

@@ -1,8 +1,8 @@
 <template>
 	<view>
 		<uni-nav-bar backgroundColor="#7b5aa6" color="#cbd3da"
-		leftIcon="back" title="username" @clickLeft="back">
-		</uni-nav-bar>
+		leftIcon="back" title="username" @clickLeft="back" statusBar="true">
+		</uni-nav-bar >
 		<view style="height: 100rpx;"
 		class="fixed-bottom flex align-center border-top bg-white">
 			<input type="text" value="" 
