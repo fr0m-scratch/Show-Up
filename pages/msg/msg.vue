@@ -2,7 +2,7 @@
 	<view>
 		<!-- 自定义导航栏 -->
 		<uni-nav-bar backgroundColor="#7b5aa6" color="#cbd3da"
-		title="消息" leftIcon="person" rightIcon="more-filled" @clickLeft="people">
+		title="消息" leftIcon="person" @clickLeft="people" statusBar>
 		</uni-nav-bar>
 		<!-- 消息列表 -->
 		<block v-for="(item,index) in list" :key="index">

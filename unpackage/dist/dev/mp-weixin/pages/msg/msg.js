@@ -132,7 +132,26 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var uniNavBar = function uniNavBar() {__webpack_require__.e(/*! require.ensure | components/uni-ui/uni-nav-bar/uni-nav-bar */ "components/uni-ui/uni-nav-bar/uni-nav-bar").then((function () {return resolve(__webpack_require__(/*! @/components/uni-ui/uni-nav-bar/uni-nav-bar.vue */ 145));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var uniBadge = function uniBadge() {__webpack_require__.e(/*! require.ensure | components/uni-ui/uni-badge/uni-badge */ "components/uni-ui/uni-badge/uni-badge").then((function () {return resolve(__webpack_require__(/*! @/components/uni-ui/uni-badge/uni-badge.vue */ 158));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var uniNavBar = function uniNavBar() {__webpack_require__.e(/*! require.ensure | components/uni-ui/uni-nav-bar/uni-nav-bar */ "components/uni-ui/uni-nav-bar/uni-nav-bar").then((function () {return resolve(__webpack_require__(/*! @/components/uni-ui/uni-nav-bar/uni-nav-bar.vue */ 151));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -149,7 +168,37 @@ __webpack_require__.r(__webpack_exports__);
 {
   data: function data() {
     return {
-      name: "a" };
+      list: [{
+        avatar: "../../static/Dr. Von Neumann.jpeg",
+        username: "kk",
+        update_time: 1657264852,
+        data: "neirongjjjjjjjjjjjjjjjjjjjjkkkkkkkkkkjjjjjjjjjjjjjjjjj",
+        unread: 2 },
+      {
+        avatar: "../../static/Dr. Von Neumann.jpeg",
+        username: "kk",
+        update_time: 1657264852,
+        data: "neirongjjjjjjjjjjjjjjjjjjjjkkkkkkkkkkjjjjjjjjjjjjjjjjj",
+        unread: 2 },
+      {
+        avatar: "../../static/Dr. Von Neumann.jpeg",
+        username: "kk",
+        update_time: 1657264852,
+        data: "neirongjjjjjjjjjjjjjjjjjjjjkkkkkkkkkkjjjjjjjjjjjjjjjjj",
+        unread: 2 },
+      {
+        avatar: "../../static/Dr. Von Neumann.jpeg",
+        username: "kk",
+        update_time: 1657264852,
+        data: "neirongjjjjjjjjjjjjjjjjjjjjkkkkkkkkkkjjjjjjjjjjjjjjjjj",
+        unread: 2 },
+      {
+        avatar: "../../static/Dr. Von Neumann.jpeg",
+        username: "kk",
+        update_time: 1657264852,
+        data: "neirongjjjjjjjjjjjjjjjjjjjjkkkkkkkkkkjjjjjjjjjjjjjjjjj",
+        unread: 2 }] };
+
 
   },
   watch: {
@@ -158,7 +207,8 @@ __webpack_require__.r(__webpack_exports__);
     } },
 
   components: {
-    uniNavBar: uniNavBar },
+    uniNavBar: uniNavBar,
+    uniBadge: uniBadge },
 
   methods: {
     change: function change() {

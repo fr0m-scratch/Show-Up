@@ -19,5 +19,5 @@
 	@import "./common/all.css";
 	@import "./common/free.css";
 	@import "./common/common.css";
-	@import "components/uni-ui/uni-icons/uniicons.css"
+	@import "components/uni-ui/uni-icons/uniicons.css";
 </style>

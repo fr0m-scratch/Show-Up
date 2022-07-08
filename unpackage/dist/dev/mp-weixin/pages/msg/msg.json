@@ -1,6 +1,8 @@
 {
+  "navigationStyle": "custom",
   "enablePullDownRefresh": false,
   "usingComponents": {
-    "uni-nav-bar": "/components/uni-ui/uni-nav-bar/uni-nav-bar"
+    "uni-nav-bar": "/components/uni-ui/uni-nav-bar/uni-nav-bar",
+    "uni-badge": "/components/uni-ui/uni-badge/uni-badge"
   }
 }
