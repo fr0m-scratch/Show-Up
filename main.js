@@ -10,6 +10,8 @@ Vue.component("divider", divider)
 import noThing from "./components/common/no-thing.vue";
 Vue.component("no-thing", noThing)
 
+//引入时间库
+
 App.mpType = 'app'
 const app = new Vue({
     ...App

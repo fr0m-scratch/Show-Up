@@ -5,22 +5,24 @@
 		title="消息" leftIcon="person" rightIcon="more-filled">
 		</uni-nav-bar>
 		<!-- 消息列表 -->
+		<block v-for="(item,index) in list" :key="index">
 		<view class="flex align-center p-2 border-bottom border-light-secondary" hover-class="bg-light">
-			<image src="../../static/Dr. Von Neumann.jpeg"
+			<image :src="item.avatar"
 			style="height: 80rpx; width: 80rpx;"
 			class="rounded-circle mr-2"></image>
 			<view class="flex flex-column flex-1">
 				<view class="flex align-center justify-between">
-					<text class="font-md">nic</text>
-					<text class="font text-secondary">12:33</text>
+					<text class="font-md">{{item.username}}</text>
+					<text class="font text-secondary">{{item.update_time}}</text>
 				</view>
 				<view class="flex justify-between">
-					<text class="text-secondary">neirong</text>
-					<uni-badge text="1" type="error"></uni-badge>
+					<text class="text-secondary text-ellipsis" 
+					style="max-width: 500rpx;">{{item.data}}</text>
+					<uni-badge :text="item.unread" type="error"></uni-badge>
 				</view>
 			</view>
-
 	    </view>
+		</block>
 	</view>	
 	
 </template>
@@ -32,7 +34,37 @@
 	export default {
 		data() {
 			return {
-				name:"a"
+				list:[{
+					avatar:"../../static/Dr. Von Neumann.jpeg",
+					username:"kk",
+					update_time:1657264852,
+					data:"neirongjjjjjjjjjjjjjjjjjjjjkkkkkkkkkkjjjjjjjjjjjjjjjjj",
+					unread:2
+				},{
+					avatar:"../../static/Dr. Von Neumann.jpeg",
+					username:"kk",
+					update_time:1657264852,
+					data:"neirongjjjjjjjjjjjjjjjjjjjjkkkkkkkkkkjjjjjjjjjjjjjjjjj",
+					unread:2
+				},{
+					avatar:"../../static/Dr. Von Neumann.jpeg",
+					username:"kk",
+					update_time:1657264852,
+					data:"neirongjjjjjjjjjjjjjjjjjjjjkkkkkkkkkkjjjjjjjjjjjjjjjjj",
+					unread:2
+				},{
+					avatar:"../../static/Dr. Von Neumann.jpeg",
+					username:"kk",
+					update_time:1657264852,
+					data:"neirongjjjjjjjjjjjjjjjjjjjjkkkkkkkkkkjjjjjjjjjjjjjjjjj",
+					unread:2
+				},{
+					avatar:"../../static/Dr. Von Neumann.jpeg",
+					username:"kk",
+					update_time:1657264852,
+					data:"neirongjjjjjjjjjjjjjjjjjjjjkkkkkkkkkkjjjjjjjjjjjjjjjjj",
+					unread:2
+				}]
 			}
 		},
 		watch: {
