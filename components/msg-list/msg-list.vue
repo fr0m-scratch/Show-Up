@@ -1,5 +1,6 @@
 <template>
-	<view class="flex align-center p-2 border-bottom border-light-secondary" hover-class="bg-light">
+	<view class="flex align-center p-2 border-bottom border-light-secondary" hover-class="bg-light"
+	@click="open">
 		<image :src="item.avatar"
 		style="height: 80rpx; width: 80rpx;"
 		class="rounded-circle mr-2"></image>
@@ -28,7 +29,13 @@
 			item:Object,
 			index:Number
 		},
-		
+		methods:{
+			open() {
+				uni.navigateTo({
+					url:'/pages/user-chat/user-chat'
+				});
+			}
+		},
 		data() {
 			return {
 				

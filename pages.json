@@ -104,6 +104,16 @@
             }
             
         }
+        ,{
+            "path" : "pages/user-chat/user-chat",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationStyle": "default",
