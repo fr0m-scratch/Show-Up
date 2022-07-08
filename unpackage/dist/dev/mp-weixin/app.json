@@ -10,11 +10,14 @@
     "pages/add-input/add-input",
     "components/common/upload-image",
     "pages/topic-nav/topic-nav",
-    "pages/detail/detail"
+    "pages/detail/detail",
+    "pages/user-list/user-list"
   ],
   "subPackages": [],
   "window": {
-    "navigationStyle": "custom"
+    "navigationStyle": "default",
+    "navigationBarBackgroundColor": "#7b5aa6",
+    "backgroundTextStyle": "light"
   },
   "tabBar": {
     "color": "#b8b8b8",
@@ -50,6 +53,5 @@
   "usingComponents": {
     "divider": "/components/common/divider",
     "no-thing": "/components/common/no-thing"
-  },
-  "sitemapLocation": "sitemap.json"
+  }
 }

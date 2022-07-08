@@ -2,7 +2,7 @@
 	<view>
 		<!-- 自定义导航栏 -->
 		<uni-nav-bar backgroundColor="#7b5aa6" color="#cbd3da"
-		title="消息" leftIcon="person" rightIcon="more-filled">
+		title="消息" leftIcon="person" rightIcon="more-filled" @clickLeft="people">
 		</uni-nav-bar>
 		<!-- 消息列表 -->
 		<view class="flex align-center"></view>
@@ -29,6 +29,11 @@
 		 methods:{
 			change: function(){
 				this.name='b';
+			},
+			people(){
+				uni.navigateTo({
+					url: '/pages/user-list/user-list',	
+				});
 			}
 		}
 	}

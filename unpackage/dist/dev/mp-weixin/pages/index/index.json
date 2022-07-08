@@ -1,4 +1,5 @@
 {
+  "navigationBarTitleText": "校友圈",
   "usingComponents": {
     "common-list": "/components/common/common-list",
     "load-more": "/components/common/load-more",

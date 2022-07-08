@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<!-- 导航 -->
-		<uni-nav-bar :border="false" :fixed="true" :statusBar="true" @clickRight="openAddInput">
+		<uni-nav-bar :border="false" :fixed="true" :statusBar="true">
 			<view class="flex align-center justify-center font-weight-bold w-100">
 			<!-- 	<view class="font-lg text-main mx-1">关注</view> -->
 				<view class="mx-1 my-4" @click="changeTab(index)"
@@ -11,7 +11,6 @@
 				</view>
 				
 			</view>
-			<text slot="right" class="gg-pen mr-2"></text>
 		</uni-nav-bar>
 		
 		<swiper :current="tabIndex" :duration="500" :style="'height:'+scrollH+'px;'" @change="onChangeTab">
@@ -58,10 +57,12 @@
 				</scroll-view>
 			</swiper-item>
 		</swiper>
+		<uni-fab horizontal="right" vertical="bottom" :pattern="fabPattern" @fabClick="openAddInput"></uni-fab>
 	</view>
 </template>
 
 <script>
+	import uniFab from '@/components/uni-ui/uni-fab/uni-fab.vue'
 	const demo = [{
 		username:"冯诺依曼博士",
 		userpic:"/static/Dr. Von Neumann.jpeg",
@@ -120,7 +121,8 @@
 			uniIcons,
 			uniNavBar,
 			loadMore,
-			commonList
+			commonList,
+			uniFab
 			
 		},
 		data() {
@@ -174,7 +176,10 @@
 					desc:"话题描述",
 					news_count:10
 				
-				}]
+				}],
+				fabPattern:{
+					buttonColor: "#7b5aa6"
+				},
 			}
 		},
 		onLoad() {

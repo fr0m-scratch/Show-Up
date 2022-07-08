@@ -1,7 +1,6 @@
 <template>
 	<view>
 		<!-- 搜索栏 -->
-		<uni-status-bar></uni-status-bar>
 		<uni-search-bar @click.native="search" placeholder="Type to search" cancelButton="none" :showCase="showCase"></uni-search-bar>
 		<!-- 顶部选项卡 -->
 		<scroll-view scroll-x :scroll-into-view="scrollInto"

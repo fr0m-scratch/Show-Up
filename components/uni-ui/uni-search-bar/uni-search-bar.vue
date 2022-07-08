@@ -185,9 +185,18 @@ s<template>
 				this.searchVal = ""
 			},
 			cancel() {
-				uni.navigateBack({
-					delta: 1
-				})
+				this.$emit("cancel", {
+					value: this.searchVal
+				});
+				this.searchVal = ""
+				this.show = false
+				this.showSync = false
+				// #ifndef APP-PLUS
+				uni.hideKeyboard()
+				// #endif
+				// #ifdef APP-PLUS
+				plus.key.hideSoftKeybord()
+				// #endif
 			},
 			confirm() {
 				// #ifndef APP-PLUS

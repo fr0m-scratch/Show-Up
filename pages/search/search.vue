@@ -1,6 +1,5 @@
 <template>
 	<view>
-		<uniStatusBar></uniStatusBar>
 		<uni-search-bar placeholder="Type to search"></uni-search-bar>
 		
 			

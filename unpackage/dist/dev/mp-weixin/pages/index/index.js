@@ -240,9 +240,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 var _commonList = _interopRequireDefault(__webpack_require__(/*! @/components/common/common-list.vue */ 23));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _toConsumableArray(arr) {return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();}function _nonIterableSpread() {throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _unsupportedIterableToArray(o, minLen) {if (!o) return;if (typeof o === "string") return _arrayLikeToArray(o, minLen);var n = Object.prototype.toString.call(o).slice(8, -1);if (n === "Object" && o.constructor) n = o.constructor.name;if (n === "Map" || n === "Set") return Array.from(o);if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);}function _iterableToArray(iter) {if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter);}function _arrayWithoutHoles(arr) {if (Array.isArray(arr)) return _arrayLikeToArray(arr);}function _arrayLikeToArray(arr, len) {if (len == null || len > arr.length) len = arr.length;for (var i = 0, arr2 = new Array(len); i < len; i++) {arr2[i] = arr[i];}return arr2;} //
-//
 //
 //
 //
@@ -296,6 +294,7 @@ var demo = [{ username: "冯诺依曼博士", userpic: "/static/Dr. Von Neumann.
       scrollInto: "", tabIndex: 0, tabBars: [{ name: '关注' }, { name: '关注' }, { name: '关注' }, { name: '关注' }, { name: '关注' }, { name: '关注' }], newsList: [{}], showCase: false };}, //监听点击导航栏搜索框
   onLoad: function onLoad() {var _this = this;uni.getSystemInfo({ success: function success(res) {_this.scrollH = res.windowHeight - uni.upx2px(101);} }); //根据选项生成列表
     this.getData();
+
 
   },
   methods: {
