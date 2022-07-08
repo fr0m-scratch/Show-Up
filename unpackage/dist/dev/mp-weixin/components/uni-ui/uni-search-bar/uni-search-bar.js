@@ -301,8 +301,17 @@ var uniIcons = function uniIcons() {Promise.all(/*! require.ensure | components/
       this.searchVal = "";
     },
     cancel: function cancel() {
-      uni.navigateBack({
-        delta: 1 });
+      this.$emit("cancel", {
+        value: this.searchVal });
+
+      this.searchVal = "";
+      this.show = false;
+      this.showSync = false;
+
+      uni.hideKeyboard();
+
+
+
 
     },
     confirm: function confirm() {
