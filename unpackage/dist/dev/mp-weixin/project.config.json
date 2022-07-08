@@ -33,7 +33,7 @@
     "useCompilerPlugins": false
   },
   "compileType": "miniprogram",
-  "libVersion": "2.24.6",
+  "libVersion": "2.24.4",
   "appid": "wx0b8f17423891ac50",
   "projectname": "shequ1",
   "condition": {},

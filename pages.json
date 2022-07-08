@@ -23,6 +23,7 @@
             "style" :{
                 "navigationStyle": "custom",
                 "enablePullDownRefresh": false
+
             }
             
         }

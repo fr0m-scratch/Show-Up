@@ -2,7 +2,8 @@
   "navigationStyle": "custom",
   "enablePullDownRefresh": false,
   "usingComponents": {
+    "msg-list": "/components/msg-list/msg-list",
     "uni-nav-bar": "/components/uni-ui/uni-nav-bar/uni-nav-bar",
-    "uni-badge": "/components/uni-ui/uni-badge/uni-badge"
+    "no-thing": "/components/common/no-thing"
   }
 }
