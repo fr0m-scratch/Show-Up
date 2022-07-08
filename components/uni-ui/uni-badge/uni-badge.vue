@@ -1,8 +1,9 @@
 <template>
 	<view class="uni-badge--x">
-		<slot />
-		<text v-if="text" :class="classNames" :style="[badgeWidth, positionStyle, customStyle, dotStyle]"
-			class="uni-badge" @click="onClick()">{{displayValue}}</text>
+		<view v-if="text" :class="classNames" :style="[badgeWidth, positionStyle, customStyle, dotStyle]"
+			class="uni-badge" @click="onClick()">
+			<slot></slot> {{text}}
+		</view>
 	</view>
 </template>
 

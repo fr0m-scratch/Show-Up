@@ -1,0 +1,30 @@
+{
+  "id": "3509949",
+  "name": "sdc",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "11372677",
+      "name": "男",
+      "font_class": "nan",
+      "unicode": "e8b3",
+      "unicode_decimal": 59571
+    },
+    {
+      "icon_id": "11372678",
+      "name": "女",
+      "font_class": "nv",
+      "unicode": "e8b4",
+      "unicode_decimal": 59572
+    },
+    {
+      "icon_id": "1240740",
+      "name": "笔",
+      "font_class": "bi",
+      "unicode": "e608",
+      "unicode_decimal": 58888
+    }
+  ]
+}
