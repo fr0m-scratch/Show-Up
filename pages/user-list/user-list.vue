@@ -1,7 +1,8 @@
 <template>
 	<view>
 		<uni-search-bar placeholder="Type to search" cancelButton="auto" :showCase="showCase"></uni-search-bar>
-		<view class="flex align-center py-2">
+		<!-- tab -->
+		<view class="flex align-center" style="height: 100rpx;">
 			<view class="flex-1 flex align-center justify-center" v-for="(item,index) in tabBars" :key = "index" :class="index === tabIndex ? 'font-lg font-weight bold text-main':'font-md'" @click="changeTab(index)">
 			{{item.name}} {{item.num}}
 			</view>
@@ -16,20 +17,11 @@
 						<!-- 列表 -->
 						<block v-for="(item2, index2) in item.list" :key="index2">
 							<!-- 列表样式 -->
-							<view class="p-2 flex align-center border-bottom border-light-secondary">
-								<image src="../../static/Dr. Von Neumann.jpeg" style="width: 100rpx; height:100rpx;" class="rounded-circle mr-2"></image>
-								<view class="flex flex-column flex-1">
-									<text class="font-md text-dark">name</text>
-									<uni-badge text="24" type="error">
-										<text class="iconfont icon-nv" style="font-size: 18rpx;"></text>
-									</uni-badge>
-								</view>
-								<uni-icons type="checkbox-filled" color="grey"></uni-icons>
-							</view>
+							<user-list :item="item2" :index="index2"></user-list>
 							<!-- 全局分割线 -->
 						</block>
 						<!-- 上拉加载 -->
-						<load-more :loadmore ="item.loadmore" ></load-more>
+						<load-more v-if="item.list.length >10" :loadmore ="item.loadmore" ></load-more>
 					</template>
 					<!-- 无数据 -->
 					<template v-else>
@@ -47,12 +39,26 @@
 </template>
 
 <script>
+	const demo = [{
+		avatar:"/static/cat.jpeg",
+		username:"asd",
+		sex:1,
+		age:24,
+		isFollow:true
+	},
+	{
+		avatar:"/static/logo.png",
+		username:"asd",
+		sex:2,
+		age:19,
+		isFollow:true
+	}];
 	import uniSearchBar from '@/components/uni-ui/uni-search-bar/uni-search-bar.vue';
-	import commonList from '@/components/common/common-list.vue';
 	import loadMore from '@/components/common/load-more.vue';
 	import noThing from '@/components/common/no-thing.vue';
 	import uniIcons from '@/components/uni-ui/uni-icons/uni-icons.vue'
 	import uniBadge from '@/components/uni-ui/uni-badge/uni-badge.vue'
+	import userList from '@/components/user-list/user-list.vue'
 	export default {
 		data() {
 			return {
@@ -76,16 +82,16 @@
 		},
 		components:{
 			uniSearchBar,
-			commonList,
 			loadMore,
 			noThing,
 			uniIcons,
-			uniBadge
+			uniBadge,
+			userList
 		},
 		onLoad() {
 			uni.getSystemInfo({
 				success: res => {
-					this.scrollH = res.windowHeight - uni.upx2px(101)
+					this.scrollH = res.windowHeight - uni.upx2px(100)
 				}
 				
 			})
@@ -128,7 +134,7 @@
 						list:[]
 					}
 					if (i < 2) {
-						obj.list = [1,2,3,4,5]
+						obj.list = demo
 					}
 					
 					arr.push(obj)
