@@ -22,7 +22,7 @@
             "path" : "pages/msg/msg",
             "style" :{
                 
-                "enablePullDownRefresh": false
+                "enablePullDownRefresh": true
             }
             
         }
