@@ -171,11 +171,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 var _default =
 {
   props: {
     item: Object,
-    index: Number },
+    index: {
+      type: Number,
+      default: -1 },
+
+    isdetail: {
+      type: Boolean,
+      default: false } },
+
 
   methods: {
     openSpace: function openSpace() {
@@ -194,6 +203,18 @@ var _default =
         type: type,
         index: this.index });
 
+    },
+    doComment: function doComment() {
+      if (!this.isdetail) {
+        return this.openDetail();
+      }
+      this.$emit('doComment');
+    },
+    doShare: function doShare() {
+      if (!this.isdetail) {
+        return this.openDetail();
+      }
+      this.$emit('doShare');
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

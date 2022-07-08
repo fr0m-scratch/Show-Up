@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<!-- 导航栏 -->
-		<uniNavBar leftIcon="left" title="所有人可见" statusBar :border="false">
+		<uniNavBar leftIcon="back" title="所有人可见" statusBar :border="false">
 			<view class="align-center flex justify-center w-100">
 				所有人可见 <uni-icons type="settings"></uni-icons>
 			</view>

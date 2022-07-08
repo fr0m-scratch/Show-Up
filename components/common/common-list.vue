@@ -23,10 +23,12 @@
 		<!-- //标题 -->
 		<view class="font-sm my-1" @click="openDetail">{{item.title}}</view>
 		<!-- //图片 -->
-		<view>
-			<image v-if="item.titlepic"class="rounded" :src="item.titlepic" style="height: 350rpx; width: 100%;"
-			@click="openDetail"></image>
-		</view>
+		<slot>
+			<view>
+				<image v-if="item.titlepic"class="rounded" :src="item.titlepic" style="height: 350rpx; width: 100%;"
+				@click="openDetail"></image>
+			</view>
+		</slot>
 		<!-- //按钮 -->
 		<view class="flex justify-center align-center">
 			<view class="flex justify-center align-center flex-1 animated faster" hover-class="bounceIn"
@@ -40,12 +42,12 @@
 				<text>{{item.support.unsupport_count> 0 ? item.support.unsupport_count : ""}}</text>
 			</view>
 			<view class="flex justify-center align-center flex-1 animated faster text-muted" hover-class="bounceIn"
-			@click="openDetail">
+			@click="doComment">
 				<text class="gg-comment mr-2"></text>
 				<text>{{item.comment_count> 0 ? item.comment_count : ""}}</text>
 			</view>
 			<view class="flex justify-center align-center flex-1 animated faster text-muted" hover-class="bounceIn" 
-			@click="openDetail">
+			@click="doShare">
 				<text class="gg-share mr-3"></text>
 				<text>{{item.share_num> 0 ? item.share_num : ""}}</text>
 			</view>
@@ -59,7 +61,14 @@
 	export default {
 		props:{
 			item:Object,
-			index:Number
+			index: {
+				type:Number,
+				default:-1
+			},
+			isdetail:{
+				type:Boolean,
+				default:false
+			}
 		},
 		methods:{
 			openSpace(){
@@ -78,6 +87,18 @@
 					type:type,
 					index:this.index
 				});
+			},
+			doComment(){
+				if (!this.isdetail){
+					return this.openDetail()
+				}
+				this.$emit('doComment')
+			},
+			doShare(){
+				if (!this.isdetail){
+					return this.openDetail()
+				}
+				this.$emit('doShare')
 			}
 			
 				

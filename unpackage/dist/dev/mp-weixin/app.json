@@ -50,5 +50,6 @@
   "usingComponents": {
     "divider": "/components/common/divider",
     "no-thing": "/components/common/no-thing"
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }
