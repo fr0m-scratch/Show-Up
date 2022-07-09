@@ -4,7 +4,7 @@
 		leftIcon="back" title="username" @clickLeft="back">
 		</uni-nav-bar>
 		<view style="height: 100rpx;"
-		class="fixed-bottom flex align-center border-top bg-white">
+		class="fixed-bottom flex align-center border-top bg-white pb-5">
 			<input type="text" value="" 
 			class="flex-1 rounded ml-1 bg-light"
 			style="padding: 5rpx;"/>
