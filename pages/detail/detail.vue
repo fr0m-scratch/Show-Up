@@ -1,11 +1,12 @@
 <template>
 	<view>
-		<uni-nav-bar leftIcon="back" rightIcon="more-filled" :title="title" ></uni-nav-bar>
+		<uni-nav-bar rightIcon="more-filled" :title="title"></uni-nav-bar>
 		<common-list :item="info" isdetail @doComment="doComment" @doShare="doShare" @follow="follow">
 			<view>{{info.content}}</view>
 			<!-- 图片-->
 			<view></view>
 		</common-list>
+		<!-- popup -->
 		
 	</view>
 </template>
