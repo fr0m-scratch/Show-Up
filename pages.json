@@ -21,8 +21,9 @@
         ,{
             "path" : "pages/msg/msg",
             "style" :{
-                
+                "navigationStyle": "custom",
                 "enablePullDownRefresh": true
+
             }
             
         }

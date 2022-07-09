@@ -129,7 +129,7 @@ var _default =
 
 /***/ }),
 
-/***/ 53:
+/***/ 54:
 /*!**************************************************************************************!*\
   !*** C:/Users/86183/Desktop/shequ1/main.js?{"page":"components%2Fcommon%2Fdivider"} ***!
   \**************************************************************************************/
@@ -145,5 +145,5 @@ createPage(_divider.default);
 
 /***/ })
 
-},[[53,"common/runtime","common/vendor"]]]);
+},[[54,"common/runtime","common/vendor"]]]);
 //# sourceMappingURL=../../../.sourcemap/mp-weixin/components/common/divider.js.map
