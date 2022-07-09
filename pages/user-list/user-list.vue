@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<uni-search-bar placeholder="Type to search" cancelButton="auto" :showCase="showCase"></uni-search-bar>
+		<uni-search-bar @click.native="search" placeholder="Type to search" cancelButton="none" :showCase="showCase"></uni-search-bar>
 		<!-- tab -->
 		<view class="flex align-center" style="height: 100rpx;">
 			<view class="flex-1 flex align-center justify-center" v-for="(item,index) in tabBars" :key = "index" :class="index === tabIndex ? 'font-lg font-weight bold text-main':'font-md'" @click="changeTab(index)">
@@ -97,7 +97,7 @@
 			})
 			//根据选项生成列表
 			this.getData()
-			
+			this.setShowcase()
 		
 		},
 		methods: {
@@ -142,11 +142,19 @@
 				this.userList = arr
 				
 			},
+			search(){
+				uni.navigateTo({
+					url: '../search/search?type=user',
+				})
+			},
+			setShowcase(){
+				this.showCase = false
+			}
+		
+		
 		},
+		}
 		
-		
-		
-	}
 </script>
 
 <style>

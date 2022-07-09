@@ -1,5 +1,6 @@
 {
   "usingComponents": {
+    "user-list": "/components/user-list/user-list",
     "common-list": "/components/common/common-list",
     "uni-search-bar": "/components/uni-ui/uni-search-bar/uni-search-bar",
     "uni-nav-bar": "/components/uni-ui/uni-nav-bar/uni-nav-bar",
