@@ -61,7 +61,9 @@
 			unsupport_count:1
 		},
 		comment_count:2,
-		share_num:2
+		share_num:2,
+		images:["/static/Dr. Von Neumann.jpeg","https://bjetxgzv.cdn.bspapp.com/VKCEYUGU-uni-app-doc/6acec660-4f31-11eb-a16f-5b3e54966275.jpg"],
+		content:"我好爱猫咪🐈"
 	},
 	{
 		username:"冯诺依曼博士",

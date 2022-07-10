@@ -4,6 +4,10 @@ import App from './App'
 import Vue from 'vue'
 Vue.config.productionTip = false
 
+// import share
+
+import share from './common/share.js'
+Vue.mixin(share)
 
 import divider from "./components/common/divider.vue";
 Vue.component("divider", divider)

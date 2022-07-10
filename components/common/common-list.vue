@@ -46,11 +46,6 @@
 				<text class="gg-comment mr-2"></text>
 				<text>{{item.comment_count> 0 ? item.comment_count : ""}}</text>
 			</view>
-			<view class="flex justify-center align-center flex-1 animated faster text-muted" hover-class="bounceIn" 
-			@click="doShare">
-				<text class="gg-share mr-3"></text>
-				<text>{{item.share_num> 0 ? item.share_num : ""}}</text>
-			</view>
 		</view>
 		</view>
 		
@@ -93,12 +88,6 @@
 					return this.openDetail()
 				}
 				this.$emit('doComment')
-			},
-			doShare(){
-				if (!this.isdetail){
-					return this.openDetail()
-				}
-				this.$emit('doShare')
 			}
 			
 				

@@ -2607,7 +2607,25 @@ function normalizeComponent (
 
 /***/ }),
 
-/***/ 120:
+/***/ 12:
+/*!*******************************************************************************************!*\
+  !*** /Users/jamalcao/Dropbox/My Mac (Jamal’s MacBook Pro)/Desktop/shequ1/common/share.js ***!
+  \*******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  onShareAppMessage: function onShareAppMessage(res) {//发送给朋友
+    return {};
+  },
+  onShareTimeline: function onShareTimeline(res) {//分享到朋友圈
+    return {};
+  } };exports.default = _default;
+
+/***/ }),
+
+/***/ 121:
 /*!**************************************************************************************************************************!*\
   !*** /Users/jamalcao/Dropbox/My Mac (Jamal’s MacBook Pro)/Desktop/shequ1/components/uni-ui/uni-search-bar/i18n/index.js ***!
   \**************************************************************************************************************************/
@@ -2615,9 +2633,9 @@ function normalizeComponent (
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 121));
-var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 122));
-var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 123));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 122));
+var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 123));
+var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 124));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
 {
   en: _en.default,
   'zh-Hans': _zhHans.default,
@@ -2625,7 +2643,7 @@ var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 1
 
 /***/ }),
 
-/***/ 121:
+/***/ 122:
 /*!*************************************************************************************************************************!*\
   !*** /Users/jamalcao/Dropbox/My Mac (Jamal’s MacBook Pro)/Desktop/shequ1/components/uni-ui/uni-search-bar/i18n/en.json ***!
   \*************************************************************************************************************************/
@@ -2636,7 +2654,7 @@ module.exports = JSON.parse("{\"uni-search-bar.cancel\":\"cancel\",\"uni-search-
 
 /***/ }),
 
-/***/ 122:
+/***/ 123:
 /*!******************************************************************************************************************************!*\
   !*** /Users/jamalcao/Dropbox/My Mac (Jamal’s MacBook Pro)/Desktop/shequ1/components/uni-ui/uni-search-bar/i18n/zh-Hans.json ***!
   \******************************************************************************************************************************/
@@ -2647,7 +2665,7 @@ module.exports = JSON.parse("{\"uni-search-bar.cancel\":\"cancel\",\"uni-search-
 
 /***/ }),
 
-/***/ 123:
+/***/ 124:
 /*!******************************************************************************************************************************!*\
   !*** /Users/jamalcao/Dropbox/My Mac (Jamal’s MacBook Pro)/Desktop/shequ1/components/uni-ui/uni-search-bar/i18n/zh-Hant.json ***!
   \******************************************************************************************************************************/
@@ -2658,7 +2676,7 @@ module.exports = JSON.parse("{\"uni-search-bar.cancel\":\"cancel\",\"uni-search-
 
 /***/ }),
 
-/***/ 155:
+/***/ 156:
 /*!****************************************************************************************************************!*\
   !*** /Users/jamalcao/Dropbox/My Mac (Jamal’s MacBook Pro)/Desktop/shequ1/components/uni-ui/uni-icons/icons.js ***!
   \****************************************************************************************************************/
@@ -3835,7 +3853,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 
-/***/ 17:
+/***/ 18:
 /*!***********************************************************************************************!*\
   !*** /Users/jamalcao/Dropbox/My Mac (Jamal’s MacBook Pro)/Desktop/shequ1/common/iconfont.css ***!
   \***********************************************************************************************/
@@ -3848,7 +3866,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 
-/***/ 187:
+/***/ 188:
 /*!****************************************************************************************************************!*\
   !*** /Users/jamalcao/Dropbox/My Mac (Jamal’s MacBook Pro)/Desktop/shequ1/components/uni-ui/uni-popup/popup.js ***!
   \****************************************************************************************************************/
@@ -3883,7 +3901,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 
-/***/ 188:
+/***/ 189:
 /*!*********************************************************************************************************************!*\
   !*** /Users/jamalcao/Dropbox/My Mac (Jamal’s MacBook Pro)/Desktop/shequ1/components/uni-ui/uni-popup/i18n/index.js ***!
   \*********************************************************************************************************************/
@@ -3891,9 +3909,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 189));
-var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 190));
-var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 191));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 190));
+var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 191));
+var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 192));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
 {
   en: _en.default,
   'zh-Hans': _zhHans.default,
@@ -3901,7 +3919,7 @@ var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 1
 
 /***/ }),
 
-/***/ 189:
+/***/ 190:
 /*!********************************************************************************************************************!*\
   !*** /Users/jamalcao/Dropbox/My Mac (Jamal’s MacBook Pro)/Desktop/shequ1/components/uni-ui/uni-popup/i18n/en.json ***!
   \********************************************************************************************************************/
@@ -3912,7 +3930,7 @@ module.exports = JSON.parse("{\"uni-popup.cancel\":\"cancel\",\"uni-popup.ok\":\
 
 /***/ }),
 
-/***/ 190:
+/***/ 191:
 /*!*************************************************************************************************************************!*\
   !*** /Users/jamalcao/Dropbox/My Mac (Jamal’s MacBook Pro)/Desktop/shequ1/components/uni-ui/uni-popup/i18n/zh-Hans.json ***!
   \*************************************************************************************************************************/
@@ -3923,7 +3941,7 @@ module.exports = JSON.parse("{\"uni-popup.cancel\":\"取消\",\"uni-popup.ok\":\
 
 /***/ }),
 
-/***/ 191:
+/***/ 192:
 /*!*************************************************************************************************************************!*\
   !*** /Users/jamalcao/Dropbox/My Mac (Jamal’s MacBook Pro)/Desktop/shequ1/components/uni-ui/uni-popup/i18n/zh-Hant.json ***!
   \*************************************************************************************************************************/
@@ -3965,7 +3983,7 @@ module.exports = g;
 
 /***/ }),
 
-/***/ 206:
+/***/ 207:
 /*!*******************************************************************************************************************************!*\
   !*** /Users/jamalcao/Dropbox/My Mac (Jamal’s MacBook Pro)/Desktop/shequ1/components/uni-ui/uni-transition/createAnimation.js ***!
   \*******************************************************************************************************************************/
@@ -10630,18 +10648,18 @@ internalMixin(Vue);
 
 /***/ }),
 
-/***/ 72:
+/***/ 73:
 /*!**********************************************************!*\
   !*** ./node_modules/@babel/runtime/regenerator/index.js ***!
   \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! regenerator-runtime */ 73);
+module.exports = __webpack_require__(/*! regenerator-runtime */ 74);
 
 /***/ }),
 
-/***/ 73:
+/***/ 74:
 /*!************************************************************!*\
   !*** ./node_modules/regenerator-runtime/runtime-module.js ***!
   \************************************************************/
@@ -10672,7 +10690,7 @@ var oldRuntime = hadRuntime && g.regeneratorRuntime;
 // Force reevalutation of runtime.js.
 g.regeneratorRuntime = undefined;
 
-module.exports = __webpack_require__(/*! ./runtime */ 74);
+module.exports = __webpack_require__(/*! ./runtime */ 75);
 
 if (hadRuntime) {
   // Restore the original runtime.
@@ -10689,7 +10707,7 @@ if (hadRuntime) {
 
 /***/ }),
 
-/***/ 74:
+/***/ 75:
 /*!*****************************************************!*\
   !*** ./node_modules/regenerator-runtime/runtime.js ***!
   \*****************************************************/
@@ -11421,7 +11439,7 @@ if (hadRuntime) {
 
 /***/ }),
 
-/***/ 75:
+/***/ 76:
 /*!************************************************************************************************!*\
   !*** /Users/jamalcao/Dropbox/My Mac (Jamal’s MacBook Pro)/Desktop/shequ1/common/permission.js ***!
   \************************************************************************************************/

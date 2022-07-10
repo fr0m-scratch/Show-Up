@@ -1,18 +1,13 @@
 <template>
 	<view>
-		<uni-nav-bar rightIcon="more-filled" :title="title" @clickRight="open"></uni-nav-bar>
-		<common-list :item="info" isdetail @doComment="doComment" @doShare="doShare" @follow="follow">
+		<common-list :item="info" isdetail @doComment="doComment" @follow="follow">
 			<view>{{info.content}}</view>
 			<!-- 图片-->
-			<view></view>
+			<view>
+				<image v-for="(item,index) in info.images" :src="item" class="w-100" mode="widthFix" @click="preview(index)"></image>
+			</view>
 		</common-list>
 		
-		<!-- popup -->
-		<view>
-			<uni-popup ref="popup" type="bottom">
-				<pop-share></pop-share>
-			</uni-popup>
-		</view>
 	
 	</view>
 </template>
@@ -25,7 +20,6 @@
 	export default {
 		data() {
 			return {
-				title:"title",
 				info:{
 					
 				}
@@ -43,10 +37,18 @@
 				this.__init(JSON.parse(e.detail))
 			}
 		},
+		onReady() {
+			uni.showShareMenu({
+				withShareTicket:true
+			})
+		},
 		methods: {
 			__init(data) {
-				this.title = data.title
+				uni.setNavigationBarTitle({
+					title:data.title
+				})
 				this.info = data
+				
 			},
 			doComment(){
 				
@@ -59,13 +61,12 @@
 					title:"关注成功"
 				});
 			},
-			preview(item){
+			preview(index){
+				console.log(index)
 				uni.previewImage({
-					
+					current:index,
+					urls: this.info.images
 				})
-			},
-			open(){
-				this.$refs.popup.open()
 			}
 			
 		}
