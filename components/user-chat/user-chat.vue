@@ -11,7 +11,7 @@
 			style="height: 100rpx;width: 100rpx;"
 			class="rounded-circle"></image>
 			<view class="flex bg-light p-2 rounded mx-2 mt-1"
-			style="max-width: 400rpx;min-width: 50rpx;">
+			style="max-width: 400rpx;">
 				{{item.data}}
 			</view>
 		</view>
