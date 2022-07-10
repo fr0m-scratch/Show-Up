@@ -241,7 +241,7 @@
 			},
 			search(){
 				uni.navigateTo({
-					url: '../search/search',
+					url: '../search/search?type=post',
 				})
 			}
 		}

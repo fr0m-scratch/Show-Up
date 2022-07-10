@@ -340,6 +340,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "recyclableRender", function() { return recyclableRender; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "components", function() { return components; });
 var components
+try {
+  components = {
+    userList: function() {
+      return __webpack_require__.e(/*! import() | components/user-list/user-list */ "components/user-list/user-list").then(__webpack_require__.bind(null, /*! @/components/user-list/user-list.vue */ 170))
+    }
+  }
+} catch (e) {
+  if (
+    e.message.indexOf("Cannot find module") !== -1 &&
+    e.message.indexOf(".vue") !== -1
+  ) {
+    console.error(e.message)
+    console.error("1. 排查组件名称拼写是否正确")
+    console.error(
+      "2. 排查组件是否符合 easycom 规范，文档：https://uniapp.dcloud.net.cn/collocation/pages?id=easycom"
+    )
+    console.error(
+      "3. 若组件不符合 easycom 规范，需手动引入，并在 components 中注册该组件"
+    )
+  } else {
+    throw e
+  }
+}
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
@@ -449,6 +472,27 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 var _commonList = _interopRequireDefault(__webpack_require__(/*! @/components/common/common-list.vue */ 24));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
 //
 //
@@ -475,10 +519,18 @@ var _commonList = _interopRequireDefault(__webpack_require__(/*! @/components/co
 //
 //
 //
-var demo = [{ username: "冯诺依曼博士", userpic: "/static/Dr. Von Neumann.jpeg", newstime: "日期 时间", isFollow: false, title: "王子殿下午茶餐厅力考试", titlepic: "/static/Dr. Von Neumann.jpeg", support: { type: "support", support_count: 1, unsupport_count: 1 }, comment_count: 2, share_num: 2 }, { username: "冯诺依曼博士", userpic: "/static/Dr. Von Neumann.jpeg", newstime: "日期 时间", isFollow: false, title: "这是一只猫咪", titlepic: "/static/Dr. Von Neumann.jpeg", support: { type: "support", support_count: 1, unsupport_count: 1 }, comment_count: 2, share_num: 2 }, { username: "冯诺依曼博士", userpic: "/static/Dr. Von Neumann.jpeg", newstime: "日期 时间", isFollow: false, title: "这是一只猫咪", titlepic: "/static/Dr. Von Neumann.jpeg", support: { type: "", support_count: 1, unsupport_count: 1 }, comment_count: 2, share_num: 2 }];var uniSearchBar = function uniSearchBar() {Promise.all(/*! require.ensure | components/uni-ui/uni-search-bar/uni-search-bar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/uni-ui/uni-search-bar/uni-search-bar")]).then((function () {return resolve(__webpack_require__(/*! @/components/uni-ui/uni-search-bar/uni-search-bar.vue */ 115));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var uniNavBar = function uniNavBar() {__webpack_require__.e(/*! require.ensure | components/uni-ui/uni-nav-bar/uni-nav-bar */ "components/uni-ui/uni-nav-bar/uni-nav-bar").then((function () {return resolve(__webpack_require__(/*! @/components/uni-ui/uni-nav-bar/uni-nav-bar.vue */ 158));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var uniStatusBar = function uniStatusBar() {__webpack_require__.e(/*! require.ensure | components/uni-ui/uni-nav-bar/uni-status-bar */ "components/uni-ui/uni-nav-bar/uni-status-bar").then((function () {return resolve(__webpack_require__(/*! @/components/uni-ui/uni-nav-bar/uni-status-bar.vue */ 133));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default = { components: { commonList: _commonList.default, uniSearchBar: uniSearchBar, uniNavBar: uniNavBar, uniStatusBar: uniStatusBar }, data: function data() {return { searchText: "", list: ['nyc dating', 'food', 'thrift'], //搜索结果
-      searchList: [] };}, //监听导航输入
+//
+//
+//
+//
+//
+//
+//
+var demo = [{ username: "冯诺依曼博士", userpic: "/static/Dr. Von Neumann.jpeg", newstime: "日期 时间", isFollow: false, title: "王子殿下午茶餐厅力考试", titlepic: "/static/Dr. Von Neumann.jpeg", support: { type: "support", support_count: 1, unsupport_count: 1 }, comment_count: 2, share_num: 2 }, { username: "冯诺依曼博士", userpic: "/static/Dr. Von Neumann.jpeg", newstime: "日期 时间", isFollow: false, title: "这是一只猫咪", titlepic: "/static/Dr. Von Neumann.jpeg", support: { type: "support", support_count: 1, unsupport_count: 1 }, comment_count: 2, share_num: 2 }, { username: "冯诺依曼博士", userpic: "/static/Dr. Von Neumann.jpeg", newstime: "日期 时间", isFollow: false, title: "这是一只猫咪", titlepic: "/static/Dr. Von Neumann.jpeg", support: { type: "", support_count: 1, unsupport_count: 1 }, comment_count: 2, share_num: 2 }];var demo1 = [{ avatar: "/static/cat.jpeg", username: "asd", sex: 1, age: 24, isFollow: true }, { avatar: "/static/logo.png", username: "asd", sex: 2, age: 19, isFollow: true }];var uniSearchBar = function uniSearchBar() {Promise.all(/*! require.ensure | components/uni-ui/uni-search-bar/uni-search-bar */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/uni-ui/uni-search-bar/uni-search-bar")]).then((function () {return resolve(__webpack_require__(/*! @/components/uni-ui/uni-search-bar/uni-search-bar.vue */ 115));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var uniNavBar = function uniNavBar() {__webpack_require__.e(/*! require.ensure | components/uni-ui/uni-nav-bar/uni-nav-bar */ "components/uni-ui/uni-nav-bar/uni-nav-bar").then((function () {return resolve(__webpack_require__(/*! @/components/uni-ui/uni-nav-bar/uni-nav-bar.vue */ 158));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var uniStatusBar = function uniStatusBar() {__webpack_require__.e(/*! require.ensure | components/uni-ui/uni-nav-bar/uni-status-bar */ "components/uni-ui/uni-nav-bar/uni-status-bar").then((function () {return resolve(__webpack_require__(/*! @/components/uni-ui/uni-nav-bar/uni-status-bar.vue */ 133));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var userList = function userList() {__webpack_require__.e(/*! require.ensure | components/user-list/user-list */ "components/user-list/user-list").then((function () {return resolve(__webpack_require__(/*! @/components/user-list/user-list.vue */ 170));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default = { components: { commonList: _commonList.default, uniSearchBar: uniSearchBar, uniNavBar: uniNavBar, uniStatusBar: uniStatusBar, userList: userList }, data: function data() {return { searchText: "", list: ['nyc dating', 'food', 'thrift'], //搜索结果
+      searchList: [], type: "post" };}, //监听导航输入
   onNavigationBarSearchInputChanged: function onNavigationBarSearchInputChanged(e) {this.searchText = e.text;}, //监听点击导航搜索按钮
-  onNavigationBarButtonTap: function onNavigationBarButtonTap(e) {if (e.index === 0) {this.searchEvent();}
+  onNavigationBarButtonTap: function onNavigationBarButtonTap(e) {if (e.index === 0) {this.searchEvent();}}, onLoad: function onLoad(e) {if (e.type) {this.type = e.type;
+    }
   },
   methods: {
     //点击搜索历史
@@ -497,7 +549,15 @@ var demo = [{ username: "冯诺依曼博士", userpic: "/static/Dr. Von Neumann.
 
       //请求搜索
       setTimeout(function () {
-        _this.searchList = demo;
+        switch (_this.type) {
+          case 'post':
+            _this.searchList = demo;
+            break;
+          case 'user':
+            _this.searchList = demo1;
+            break;}
+
+
         //隐藏loading
         uni.hideLoading();
       }, 3000);

@@ -20,6 +20,8 @@
 	// #ifdef H5
 	import keypress from './keypress.js'
 	// #endif
+	
+	import uniTransition from '@/components/uni-ui/uni-transition/uni-transition.vue'
 
 	/**
 	 * PopUp 弹出层
@@ -48,8 +50,9 @@
 		name: 'uniPopup',
 		components: {
 			// #ifdef H5
-			keypress
+			keypress,
 			// #endif
+			uniTransition
 		},
 		emits: ['change', 'maskClick'],
 		props: {
