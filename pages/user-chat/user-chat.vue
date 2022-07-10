@@ -18,14 +18,7 @@
 		</scroll-view>
 			
 		<!-- 底部输入框 -->	
-		<view style="height: 100rpx;"
-		class="fixed-bottom flex align-center border-top bg-white pb-5">
-			<input type="text" v-model="content"
-			class="flex-1 rounded ml-1 bg-light"
-			style="padding: 5rpx;" @confirm="submit"/>
-			<uni-icons type="paperplane" size="30" color="purple"
-			style = "width: 100rpx;" @click="submit"></uni-icons>
-		</view>
+		<bottom-input @submit="submit"></bottom-input>
 		
 	</view>
 </template>
@@ -36,17 +29,18 @@
 	import uniIcons from "@/components/uni-ui/uni-icons/uni-icons.vue";
 	import statusBar from "@/components/uni-ui/uni-nav-bar/uni-status-bar.vue";
 	import uniNavBar from "@/components/uni-ui/uni-nav-bar/uni-nav-bar.vue" 
+	import bottomInput from '@/components/bottom-input/bottom-input.vue'
 	export default {
 		components:{
 			userChat,
 			uniIcons,
 			statusBar,
-			uniNavBar
+			uniNavBar,
+			bottomInput
 		},
 		data() {
 			return {
 				scrollInto:"",       
-				content:"",
 				list:[{
 					user_id: 2,
 					avatar:"../../static/Dr. Von Neumann.jpeg",
@@ -117,23 +111,16 @@
 				})
 			},
 			
-			submit(){
+			submit(data){
 				let obj = {
 					user_id: 1,
 					avatar:"../../static/cat.jpeg",
 					username:"goubili",
 					type:"text",
-					data:this.content,
+					data:data,
 					create_time:1657264852
 				}
-				if (this.content === ''){
-					return uni.showToast({
-						title:'不能发送空白内容',
-						icon:'none'
-					});
-				}
 				this.list.push(obj)
-				this.content = ''
 				this.pageToBottom()
 			},
 			pageToBottom(){
