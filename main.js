@@ -5,7 +5,6 @@ import Vue from 'vue'
 Vue.config.productionTip = false
 
 // import share
-
 import share from './common/share.js'
 Vue.mixin(share)
 
@@ -14,6 +13,10 @@ Vue.component("divider", divider)
 import noThing from "./components/common/no-thing.vue";
 Vue.component("no-thing", noThing)
 import "./common/iconfont.css"
+//import config
+import $C from '@/common/config.js';
+Vue.prototype.$C = $C
+
 //引入时间库
 
 App.mpType = 'app'

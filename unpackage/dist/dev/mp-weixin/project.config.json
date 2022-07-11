@@ -16,6 +16,7 @@
     "uglifyFileName": false,
     "uploadWithSourceMap": true,
     "enhance": true,
+    "useMultiFrameRuntime": true,
     "showShadowRootInWxmlPanel": true,
     "packNpmManually": false,
     "packNpmRelationList": [],
@@ -29,9 +30,7 @@
       "outputPath": ""
     },
     "disableUseStrict": false,
-    "useCompilerPlugins": false,
-    "minifyWXML": true,
-    "useMultiFrameRuntime": true
+    "useCompilerPlugins": false
   },
   "compileType": "miniprogram",
   "libVersion": "2.24.4",

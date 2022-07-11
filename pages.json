@@ -65,7 +65,7 @@
             "path" : "pages/add-input/add-input",
             "style" :                                                                                    
             {
-               
+               "navigationStyle": "custom"
             }
             
         }
