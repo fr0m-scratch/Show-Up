@@ -3489,9 +3489,15 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /***/ }),
 
 /***/ 193:
+<<<<<<< HEAD
 /*!**************************************************************************!*\
   !*** C:/Users/86183/Desktop/shequ1/components/uni-ui/uni-popup/popup.js ***!
   \**************************************************************************/
+=======
+/*!****************************************************************************************************************!*\
+  !*** /Users/jamalcao/Dropbox/My Mac (Jamal’s MacBook Pro)/Desktop/shequ1/components/uni-ui/uni-popup/popup.js ***!
+  \****************************************************************************************************************/
+>>>>>>> e1f0af5c3b26b1f01809894286d11e2daf0dd722
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3524,9 +3530,15 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /***/ }),
 
 /***/ 194:
+<<<<<<< HEAD
 /*!*******************************************************************************!*\
   !*** C:/Users/86183/Desktop/shequ1/components/uni-ui/uni-popup/i18n/index.js ***!
   \*******************************************************************************/
+=======
+/*!*********************************************************************************************************************!*\
+  !*** /Users/jamalcao/Dropbox/My Mac (Jamal’s MacBook Pro)/Desktop/shequ1/components/uni-ui/uni-popup/i18n/index.js ***!
+  \*********************************************************************************************************************/
+>>>>>>> e1f0af5c3b26b1f01809894286d11e2daf0dd722
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3542,9 +3554,15 @@ var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 1
 /***/ }),
 
 /***/ 195:
+<<<<<<< HEAD
 /*!******************************************************************************!*\
   !*** C:/Users/86183/Desktop/shequ1/components/uni-ui/uni-popup/i18n/en.json ***!
   \******************************************************************************/
+=======
+/*!********************************************************************************************************************!*\
+  !*** /Users/jamalcao/Dropbox/My Mac (Jamal’s MacBook Pro)/Desktop/shequ1/components/uni-ui/uni-popup/i18n/en.json ***!
+  \********************************************************************************************************************/
+>>>>>>> e1f0af5c3b26b1f01809894286d11e2daf0dd722
 /*! exports provided: uni-popup.cancel, uni-popup.ok, uni-popup.placeholder, uni-popup.title, uni-popup.shareTitle, default */
 /***/ (function(module) {
 
@@ -3553,9 +3571,15 @@ module.exports = JSON.parse("{\"uni-popup.cancel\":\"cancel\",\"uni-popup.ok\":\
 /***/ }),
 
 /***/ 196:
+<<<<<<< HEAD
 /*!***********************************************************************************!*\
   !*** C:/Users/86183/Desktop/shequ1/components/uni-ui/uni-popup/i18n/zh-Hans.json ***!
   \***********************************************************************************/
+=======
+/*!*************************************************************************************************************************!*\
+  !*** /Users/jamalcao/Dropbox/My Mac (Jamal’s MacBook Pro)/Desktop/shequ1/components/uni-ui/uni-popup/i18n/zh-Hans.json ***!
+  \*************************************************************************************************************************/
+>>>>>>> e1f0af5c3b26b1f01809894286d11e2daf0dd722
 /*! exports provided: uni-popup.cancel, uni-popup.ok, uni-popup.placeholder, uni-popup.title, uni-popup.shareTitle, default */
 /***/ (function(module) {
 
@@ -3564,9 +3588,15 @@ module.exports = JSON.parse("{\"uni-popup.cancel\":\"取消\",\"uni-popup.ok\":\
 /***/ }),
 
 /***/ 197:
+<<<<<<< HEAD
 /*!***********************************************************************************!*\
   !*** C:/Users/86183/Desktop/shequ1/components/uni-ui/uni-popup/i18n/zh-Hant.json ***!
   \***********************************************************************************/
+=======
+/*!*************************************************************************************************************************!*\
+  !*** /Users/jamalcao/Dropbox/My Mac (Jamal’s MacBook Pro)/Desktop/shequ1/components/uni-ui/uni-popup/i18n/zh-Hant.json ***!
+  \*************************************************************************************************************************/
+>>>>>>> e1f0af5c3b26b1f01809894286d11e2daf0dd722
 /*! exports provided: uni-popup.cancel, uni-popup.ok, uni-popup.placeholder, uni-popup.title, uni-popup.shareTitle, default */
 /***/ (function(module) {
 
