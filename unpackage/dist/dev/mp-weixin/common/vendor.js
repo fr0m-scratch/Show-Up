@@ -3866,7 +3866,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 
-/***/ 188:
+/***/ 193:
 /*!****************************************************************************************************************!*\
   !*** /Users/jamalcao/Dropbox/My Mac (Jamal’s MacBook Pro)/Desktop/shequ1/components/uni-ui/uni-popup/popup.js ***!
   \****************************************************************************************************************/
@@ -3901,7 +3901,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 
-/***/ 189:
+/***/ 194:
 /*!*********************************************************************************************************************!*\
   !*** /Users/jamalcao/Dropbox/My Mac (Jamal’s MacBook Pro)/Desktop/shequ1/components/uni-ui/uni-popup/i18n/index.js ***!
   \*********************************************************************************************************************/
@@ -3909,9 +3909,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 190));
-var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 191));
-var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 192));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 195));
+var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 196));
+var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 197));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
 {
   en: _en.default,
   'zh-Hans': _zhHans.default,
@@ -3919,7 +3919,7 @@ var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 1
 
 /***/ }),
 
-/***/ 190:
+/***/ 195:
 /*!********************************************************************************************************************!*\
   !*** /Users/jamalcao/Dropbox/My Mac (Jamal’s MacBook Pro)/Desktop/shequ1/components/uni-ui/uni-popup/i18n/en.json ***!
   \********************************************************************************************************************/
@@ -3930,7 +3930,7 @@ module.exports = JSON.parse("{\"uni-popup.cancel\":\"cancel\",\"uni-popup.ok\":\
 
 /***/ }),
 
-/***/ 191:
+/***/ 196:
 /*!*************************************************************************************************************************!*\
   !*** /Users/jamalcao/Dropbox/My Mac (Jamal’s MacBook Pro)/Desktop/shequ1/components/uni-ui/uni-popup/i18n/zh-Hans.json ***!
   \*************************************************************************************************************************/
@@ -3941,7 +3941,7 @@ module.exports = JSON.parse("{\"uni-popup.cancel\":\"取消\",\"uni-popup.ok\":\
 
 /***/ }),
 
-/***/ 192:
+/***/ 197:
 /*!*************************************************************************************************************************!*\
   !*** /Users/jamalcao/Dropbox/My Mac (Jamal’s MacBook Pro)/Desktop/shequ1/components/uni-ui/uni-popup/i18n/zh-Hant.json ***!
   \*************************************************************************************************************************/
