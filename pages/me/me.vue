@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<uni-nav-bar backgroundColor="#7b5aa6" color="#cbd3da"
-		title="我的" rightIcon="more-filled" @clickLeft="more" statusBar>
+		title="我的" rightIcon="more-filled" @clickLeft="userSet" statusBar>
 		</uni-nav-bar>
 		<view class="flex align-center p-2" hover-class="bg-light">
 			<image src="/static/cat.jpeg"
@@ -23,23 +23,35 @@
 			</view>
 		</view>
 		
-		<view class="px-3 py-2">
-			<image src="/static/demo/banner1.jpg" mode="aspectFill"
-			style="height: 170rpx;width: 100%;" class="rounded"></image>
-		</view>
+		<uni-list-item title="浏览历史" showExtraIcon @click="openHistory">
+			<text slot="icon" class="gg-eye"></text>
+		</uni-list-item>
+		<uni-list-item title="社区认证" showExtraIcon>
+			<text slot="icon" class="gg-eye"></text>
+		</uni-list-item>
+		<uni-list-item title="审核帖子" showExtraIcon>
+			<text slot="icon" class="gg-airplane"></text>
+		</uni-list-item>
+	
+		<navigator url="../user-set/user-set" hover-class="none">
+		<uni-list-item title="我的设置" showExtraIcon>
+			<text slot="icon" class="iconfont icon-shezhi"></text>
+		</uni-list-item>
+		</navigator>
+		
 	</view>
 </template>	
 		
 		
 <script>
 	import uniNavBar from "@/components/uni-ui/uni-nav-bar/uni-nav-bar.vue";
-	// import uniListItem from '@/components/uni-ui/uni-list-item/uni-list-item.vue';
+	import uniListItem from '@/components/uni-ui/uni-list-item/uni-list-item.vue';
 	// import otherLogin from '@/components/common/other-login.vue';
 	import { mapState } from 'vuex'
 	export default {
 		components: {
-			uniNavBar
-			// uniListItem,
+			uniNavBar,
+			uniListItem
 			// otherLogin
 		},
 		data() {
@@ -59,7 +71,7 @@
 				}]
 			}
 		},
-		onNavigationBarButtonTap() {
+		userSet(){
 			uni.navigateTo({
 				url: '../user-set/user-set'
 			});

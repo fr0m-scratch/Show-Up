@@ -119,16 +119,7 @@
             "path" : "pages/user-set/user-set",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
-            "path" : "pages/user-password/user-password",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
+                "navigationBarTitleText": "设置",
                 "enablePullDownRefresh": false
             }
             
