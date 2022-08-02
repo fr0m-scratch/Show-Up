@@ -20938,6 +20938,146 @@ areaData;exports.default = _default;
 
 /***/ }),
 
+/***/ 292:
+/*!*******************************************************************************************************************************!*\
+  !*** /Users/jamalcao/Dropbox/My Mac (Jamal’s MacBook Pro)/Desktop/shequ1/components/uni-ui/uni-transition/createAnimation.js ***!
+  \*******************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.createAnimation = createAnimation;function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;} // const defaultOption = {
+// 	duration: 300,
+// 	timingFunction: 'linear',
+// 	delay: 0,
+// 	transformOrigin: '50% 50% 0'
+// }
+var
+
+
+MPAnimation = /*#__PURE__*/function () {
+  function MPAnimation(options, _this) {_classCallCheck(this, MPAnimation);
+    this.options = options;
+    this.animation = uni.createAnimation(options);
+    this.currentStepAnimates = {};
+    this.next = 0;
+    this.$ = _this;
+
+  }_createClass(MPAnimation, [{ key: "_nvuePushAnimates", value: function _nvuePushAnimates(
+
+    type, args) {
+      var aniObj = this.currentStepAnimates[this.next];
+      var styles = {};
+      if (!aniObj) {
+        styles = {
+          styles: {},
+          config: {} };
+
+      } else {
+        styles = aniObj;
+      }
+      if (animateTypes1.includes(type)) {
+        if (!styles.styles.transform) {
+          styles.styles.transform = '';
+        }
+        var unit = '';
+        if (type === 'rotate') {
+          unit = 'deg';
+        }
+        styles.styles.transform += "".concat(type, "(").concat(args + unit, ") ");
+      } else {
+        styles.styles[type] = "".concat(args);
+      }
+      this.currentStepAnimates[this.next] = styles;
+    } }, { key: "_animateRun", value: function _animateRun()
+    {var styles = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};var config = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+      var ref = this.$.$refs['ani'].ref;
+      if (!ref) return;
+      return new Promise(function (resolve, reject) {
+        nvueAnimation.transition(ref, _objectSpread({
+          styles: styles },
+        config),
+        function (res) {
+          resolve();
+        });
+      });
+    } }, { key: "_nvueNextAnimate", value: function _nvueNextAnimate(
+
+    animates) {var _this2 = this;var step = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;var fn = arguments.length > 2 ? arguments[2] : undefined;
+      var obj = animates[step];
+      if (obj) {var
+
+        styles =
+
+        obj.styles,config = obj.config;
+        this._animateRun(styles, config).then(function () {
+          step += 1;
+          _this2._nvueNextAnimate(animates, step, fn);
+        });
+      } else {
+        this.currentStepAnimates = {};
+        typeof fn === 'function' && fn();
+        this.isEnd = true;
+      }
+    } }, { key: "step", value: function step()
+
+    {var config = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+      this.animation.step(config);
+
+
+
+
+
+
+      return this;
+    } }, { key: "run", value: function run(
+
+    fn) {
+
+      this.$.animationData = this.animation.export();
+      this.$.timer = setTimeout(function () {
+        typeof fn === 'function' && fn();
+      }, this.$.durationTime);
+
+
+
+
+
+
+
+
+    } }]);return MPAnimation;}();
+
+
+
+var animateTypes1 = ['matrix', 'matrix3d', 'rotate', 'rotate3d', 'rotateX', 'rotateY', 'rotateZ', 'scale', 'scale3d',
+'scaleX', 'scaleY', 'scaleZ', 'skew', 'skewX', 'skewY', 'translate', 'translate3d', 'translateX', 'translateY',
+'translateZ'];
+
+var animateTypes2 = ['opacity', 'backgroundColor'];
+var animateTypes3 = ['width', 'height', 'left', 'right', 'top', 'bottom'];
+animateTypes1.concat(animateTypes2, animateTypes3).forEach(function (type) {
+  MPAnimation.prototype[type] = function () {var _this$animation;
+
+    (_this$animation = this.animation)[type].apply(_this$animation, arguments);
+
+
+
+
+    return this;
+  };
+});
+
+function createAnimation(option, _this) {
+  if (!_this) return;
+  clearTimeout(_this.timer);
+  return new MPAnimation(option, _this);
+}
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+
 /***/ 3:
 /*!*************************************************************!*\
   !*** ./node_modules/@dcloudio/uni-i18n/dist/uni-i18n.es.js ***!
@@ -21399,6 +21539,105 @@ function resolveLocaleChain(locale) {
   return chain;
 }
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"], __webpack_require__(/*! ./../../../webpack/buildin/global.js */ 2)))
+
+/***/ }),
+
+/***/ 36:
+/*!******************************************************************************************!*\
+  !*** /Users/jamalcao/Dropbox/My Mac (Jamal’s MacBook Pro)/Desktop/shequ1/common/time.js ***!
+  \******************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  // 计算当前日期星座
+  getHoroscope: function getHoroscope(date) {
+    var c = ['摩羯', '水瓶', '双鱼', '白羊', '金牛', '双子', '巨蟹', '狮子', '处女', '天秤', '天蝎', '射手', '摩羯'];
+    date = new Date(date);
+    var month = date.getMonth() + 1;
+    var day = date.getDate();
+    var startMonth = month - (day - 14 < '865778999988'.charAt(month));
+    return c[startMonth] + '座';
+  },
+  // 计算指定时间与当前的时间差
+  sumAge: function sumAge(data) {
+    var dateBegin = new Date(data.replace(/-/g, "/"));
+    var dateEnd = new Date(); //获取当前时间
+    var dateDiff = dateEnd.getTime() - dateBegin.getTime(); //时间差的毫秒数
+    var dayDiff = Math.floor(dateDiff / (24 * 3600 * 1000)); //计算出相差天数
+    var leave1 = dateDiff % (24 * 3600 * 1000); //计算天数后剩余的毫秒数
+    var hours = Math.floor(leave1 / (3600 * 1000)); //计算出小时数
+    //计算相差分钟数
+    var leave2 = leave1 % (3600 * 1000); //计算小时数后剩余的毫秒数
+    var minutes = Math.floor(leave2 / (60 * 1000)); //计算相差分钟数
+    //计算相差秒数
+    var leave3 = leave2 % (60 * 1000); //计算分钟数后剩余的毫秒数
+    var seconds = Math.round(leave3 / 1000);
+    return dayDiff + "天 " + hours + "小时 ";
+  },
+  // 获取聊天时间（相差300s内的信息不会显示时间）
+  getChatTime: function getChatTime(v1, v2) {
+    v1 = v1.toString().length < 13 ? v1 * 1000 : v1;
+    v2 = v2.toString().length < 13 ? v2 * 1000 : v2;
+    if ((parseInt(v1) - parseInt(v2)) / 1000 > 300) {
+      return this.gettime(v1);
+    }
+  },
+  // 人性化时间格式
+  gettime: function gettime(shorttime) {
+    shorttime = shorttime.toString().length < 13 ? shorttime * 1000 : shorttime;
+    var now = new Date().getTime();
+    var cha = (now - parseInt(shorttime)) / 1000;
+
+    if (cha < 43200) {
+      // 当天
+      return this.dateFormat(new Date(shorttime), "{A} {t}:{ii}");
+    } else if (cha < 518400) {
+      // 隔天 显示日期+时间
+      return this.dateFormat(new Date(shorttime), "{Mon}月{DD}日 {A} {t}:{ii}");
+    } else {
+      // 隔年 显示完整日期+时间
+      return this.dateFormat(new Date(shorttime), "{Y}-{MM}-{DD} {A} {t}:{ii}");
+    }
+  },
+
+  parseNumber: function parseNumber(num) {
+    return num < 10 ? "0" + num : num;
+  },
+
+  dateFormat: function dateFormat(date, formatStr) {
+    var dateObj = {},
+    rStr = /\{([^}]+)\}/,
+    mons = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
+
+    dateObj["Y"] = date.getFullYear();
+    dateObj["M"] = date.getMonth() + 1;
+    dateObj["MM"] = this.parseNumber(dateObj["M"]);
+    dateObj["Mon"] = mons[dateObj['M'] - 1];
+    dateObj["D"] = date.getDate();
+    dateObj["DD"] = this.parseNumber(dateObj["D"]);
+    dateObj["h"] = date.getHours();
+    dateObj["hh"] = this.parseNumber(dateObj["h"]);
+    dateObj["t"] = dateObj["h"] > 12 ? dateObj["h"] - 12 : dateObj["h"];
+    dateObj["tt"] = this.parseNumber(dateObj["t"]);
+    dateObj["A"] = dateObj["h"] > 12 ? '下午' : '上午';
+    dateObj["i"] = date.getMinutes();
+    dateObj["ii"] = this.parseNumber(dateObj["i"]);
+    dateObj["s"] = date.getSeconds();
+    dateObj["ss"] = this.parseNumber(dateObj["s"]);
+
+    while (rStr.test(formatStr)) {
+      formatStr = formatStr.replace(rStr, dateObj[RegExp.$1]);
+    }
+    return formatStr;
+  },
+  // 获取年龄
+  getAgeByBirthday: function getAgeByBirthday(data) {
+    var birthday = new Date(data.replace(/-/g, "\/"));
+    var d = new Date();
+    return d.getFullYear() - birthday.getFullYear() - (d.getMonth() < birthday.getMonth() || d.getMonth() == birthday.getMonth() && d.getDate() < birthday.getDate() ? 1 : 0);
+  } };exports.default = _default;
 
 /***/ }),
 
@@ -27463,7 +27702,7 @@ internalMixin(Vue);
 
 /***/ }),
 
-/***/ 79:
+/***/ 80:
 /*!************************************************************************************************!*\
   !*** /Users/jamalcao/Dropbox/My Mac (Jamal’s MacBook Pro)/Desktop/shequ1/common/permission.js ***!
   \************************************************************************************************/
@@ -27717,105 +27956,6 @@ var permission = {
 
 permission;exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
-
-/***/ }),
-
-/***/ 97:
-/*!******************************************************************************************!*\
-  !*** /Users/jamalcao/Dropbox/My Mac (Jamal’s MacBook Pro)/Desktop/shequ1/common/time.js ***!
-  \******************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
-  // 计算当前日期星座
-  getHoroscope: function getHoroscope(date) {
-    var c = ['摩羯', '水瓶', '双鱼', '白羊', '金牛', '双子', '巨蟹', '狮子', '处女', '天秤', '天蝎', '射手', '摩羯'];
-    date = new Date(date);
-    var month = date.getMonth() + 1;
-    var day = date.getDate();
-    var startMonth = month - (day - 14 < '865778999988'.charAt(month));
-    return c[startMonth] + '座';
-  },
-  // 计算指定时间与当前的时间差
-  sumAge: function sumAge(data) {
-    var dateBegin = new Date(data.replace(/-/g, "/"));
-    var dateEnd = new Date(); //获取当前时间
-    var dateDiff = dateEnd.getTime() - dateBegin.getTime(); //时间差的毫秒数
-    var dayDiff = Math.floor(dateDiff / (24 * 3600 * 1000)); //计算出相差天数
-    var leave1 = dateDiff % (24 * 3600 * 1000); //计算天数后剩余的毫秒数
-    var hours = Math.floor(leave1 / (3600 * 1000)); //计算出小时数
-    //计算相差分钟数
-    var leave2 = leave1 % (3600 * 1000); //计算小时数后剩余的毫秒数
-    var minutes = Math.floor(leave2 / (60 * 1000)); //计算相差分钟数
-    //计算相差秒数
-    var leave3 = leave2 % (60 * 1000); //计算分钟数后剩余的毫秒数
-    var seconds = Math.round(leave3 / 1000);
-    return dayDiff + "天 " + hours + "小时 ";
-  },
-  // 获取聊天时间（相差300s内的信息不会显示时间）
-  getChatTime: function getChatTime(v1, v2) {
-    v1 = v1.toString().length < 13 ? v1 * 1000 : v1;
-    v2 = v2.toString().length < 13 ? v2 * 1000 : v2;
-    if ((parseInt(v1) - parseInt(v2)) / 1000 > 300) {
-      return this.gettime(v1);
-    }
-  },
-  // 人性化时间格式
-  gettime: function gettime(shorttime) {
-    shorttime = shorttime.toString().length < 13 ? shorttime * 1000 : shorttime;
-    var now = new Date().getTime();
-    var cha = (now - parseInt(shorttime)) / 1000;
-
-    if (cha < 43200) {
-      // 当天
-      return this.dateFormat(new Date(shorttime), "{A} {t}:{ii}");
-    } else if (cha < 518400) {
-      // 隔天 显示日期+时间
-      return this.dateFormat(new Date(shorttime), "{Mon}月{DD}日 {A} {t}:{ii}");
-    } else {
-      // 隔年 显示完整日期+时间
-      return this.dateFormat(new Date(shorttime), "{Y}-{MM}-{DD} {A} {t}:{ii}");
-    }
-  },
-
-  parseNumber: function parseNumber(num) {
-    return num < 10 ? "0" + num : num;
-  },
-
-  dateFormat: function dateFormat(date, formatStr) {
-    var dateObj = {},
-    rStr = /\{([^}]+)\}/,
-    mons = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
-
-    dateObj["Y"] = date.getFullYear();
-    dateObj["M"] = date.getMonth() + 1;
-    dateObj["MM"] = this.parseNumber(dateObj["M"]);
-    dateObj["Mon"] = mons[dateObj['M'] - 1];
-    dateObj["D"] = date.getDate();
-    dateObj["DD"] = this.parseNumber(dateObj["D"]);
-    dateObj["h"] = date.getHours();
-    dateObj["hh"] = this.parseNumber(dateObj["h"]);
-    dateObj["t"] = dateObj["h"] > 12 ? dateObj["h"] - 12 : dateObj["h"];
-    dateObj["tt"] = this.parseNumber(dateObj["t"]);
-    dateObj["A"] = dateObj["h"] > 12 ? '下午' : '上午';
-    dateObj["i"] = date.getMinutes();
-    dateObj["ii"] = this.parseNumber(dateObj["i"]);
-    dateObj["s"] = date.getSeconds();
-    dateObj["ss"] = this.parseNumber(dateObj["s"]);
-
-    while (rStr.test(formatStr)) {
-      formatStr = formatStr.replace(rStr, dateObj[RegExp.$1]);
-    }
-    return formatStr;
-  },
-  // 获取年龄
-  getAgeByBirthday: function getAgeByBirthday(data) {
-    var birthday = new Date(data.replace(/-/g, "\/"));
-    var d = new Date();
-    return d.getFullYear() - birthday.getFullYear() - (d.getMonth() < birthday.getMonth() || d.getMonth() == birthday.getMonth() && d.getDate() < birthday.getDate() ? 1 : 0);
-  } };exports.default = _default;
 
 /***/ })
 

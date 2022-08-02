@@ -23,6 +23,7 @@
     "minifyWXSS": true,
     "useStaticServer": true,
     "showES6CompileOption": false,
+    "compileHotReLoad": true,
     "checkInvalidKey": true,
     "babelSetting": {
       "ignore": [],

@@ -169,6 +169,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/user-space/user-space",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationStyle": "default",

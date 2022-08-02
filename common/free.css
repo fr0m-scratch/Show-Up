@@ -266,7 +266,7 @@
 .font-weight-bolder { font-weight: bold;} /*更粗*/
 .font-italic { font-style: italic;} /*斜体*/
 /* 文字颜色 */
-.text-white {color: #ffffff;}
+.text-white {color: #ffffff!important;}
 .text-primary {color: #007bff;}
 .text-hover-primary { color: #0056b3;}
 .text-secondary {color: #6c757d;}

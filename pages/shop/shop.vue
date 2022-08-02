@@ -1,129 +1,87 @@
 <template>
 	<view>
 		<!-- 导航 -->
-		<uni-nav-bar :border="false" :fixed="true" :statusBar="true">
+		<uni-nav-bar :border="false" :fixed="true" :statusBar="true" @click-right="openAddInput">
 			<view class="flex align-center justify-center font-weight-bold w-100">
-			<!-- 	<view class="font-lg text-main mx-1">关注</view> -->
-				<view class="mx-1 my-4" @click="changeTab(index)"
+				<view class="mx-1" @click="changeTab(index)"
 				v-for="(item,index) in tabBars" :key="index"
-				:class="tabIndex === index ? 'font-lg text-main' : 'font-md text-muted'">
+				:class="tabIndex === index ? 'font-lg text-main' : 'font-md text-light-muted'">
 					{{item.name}}
 				</view>
-				
 			</view>
+			<text slot="right" class="iconfont icon-fatie_icon"></text>
 		</uni-nav-bar>
 		
-		<swiper :current="tabIndex" :duration="500" :style="'height:'+scrollH+'px;'" @change="onChangeTab">
+		<swiper :current="tabIndex" :duration="150" :style="'height:'+scrollH+'px;'" @change="onChangeTab">
 			<!-- 关注 -->
 			<swiper-item>
-				<scroll-view scroll-y="true":style="'height:' + scrollH + 'px;'"
+				<scroll-view scroll-y="true" :style="'height:'+scrollH+'px;'"
 				@scrolltolower="loadmoreEvent">
 					<block v-for="(item,index) in list" :key="index">
 						<common-list :item="item" :index="index" @doSupport="doSupport"></common-list>
 						<divider></divider>
 					</block>
-					<load-more :loadmore ="loadmore"></load-more>
+					<load-more v-if="list.length" :loadmore="loadmore"></load-more>
+					<no-thing v-else></no-thing>
 				</scroll-view>
 			</swiper-item>
-			<!-- 话题 --> 
+			<!-- 话题 -->
 			<swiper-item>
-				<scroll-view scroll-y="true":style="'height:' + scrollH + 'px;'">
-
-					<!-- 热门 -->
-					<hot-cat :hotCat="hotCat"></hot-cat>
+				<scroll-view scroll-y="true" :style="'height:'+scrollH+'px;'">
+					
+					<!-- 热门分类 -->
+					<hot-cate :hotCate="hotCate"></hot-cate>
 					<!-- 搜索框 -->
 					<view class="p-2">
-						<view class="bg-light rounded flex align-center justify-between py-2">
-							<uni-icons type="search"></uni-icons>
-							
+						<view class="bg-light rounded flex align-center justify-center py-2 text-secondary" @click="openSearch">
+							<text class="iconfont icon-sousuo mr-2"></text>
+							搜索话题
 						</view>
 					</view>
 					<!-- 轮播图 -->
-					<swiper class="px-5 pb-2" :indicator-dots="true" :autoplay="true" 
+					<swiper class="px-2 pb-2" :indicator-dots="true" 
+					:autoplay="true" 
 					:interval="3000" :duration="1000">
-						<swiper-item>
-							<image src="/static/Dr. Von Neumann.jpeg"
-							style="height: 300rpx;" class="w-100 rounded"></image>
+						<swiper-item v-for="(item,index) in swiperList"
+						:key="index">
+							<image :src="item.src"
+							style="height: 300rpx;" 
+							class="w-100 rounded"></image>
 						</swiper-item>
 					</swiper>
 					<divider></divider>
-					<!-- 最近更新-->
-					<view class="font-md p-2">最近更新</view>
+					<!-- 最近更新 -->
+					<view class="p-2 font-md">最近更新</view>
 					<!-- 话题列表组件 -->
 					<block v-for="(item,index) in topicList" :key="index">
 						<topic-list :item="item" :index="index"></topic-list>
 					</block>
-			
+					
 				</scroll-view>
 			</swiper-item>
 		</swiper>
-		<uni-fab horizontal="right" vertical="bottom" :pattern="fabPattern" @fabClick="openAddInput"></uni-fab>
+		
+		
 	</view>
 </template>
 
 <script>
-	import uniFab from '@/components/uni-ui/uni-fab/uni-fab.vue'
-	const demo = [{
-		username:"冯诺依曼博士",
-		userpic:"/static/Dr. Von Neumann.jpeg",
-		newstime:"日期 时间",
-		isFollow:false,
-		title:"王子殿下午茶餐厅力考试",
-		titlepic:"/static/Dr. Von Neumann.jpeg",
-		support:{
-			type:"support",
-			support_count:1,
-			unsupport_count:1
-		},
-		comment_count:2,
-		share_num:2
-	},
-	{
-		username:"冯诺依曼博士",
-		userpic:"/static/Dr. Von Neumann.jpeg",
-		newstime:"日期 时间",
-		isFollow:false,
-		title:"这是一只猫咪",
-		titlepic:"/static/Dr. Von Neumann.jpeg",
-		support:{
-			type:"support",
-			support_count:1,
-			unsupport_count:1
-		},
-		comment_count:2,
-		share_num:2
-	},
-	{
-		username:"冯诺依曼博士",
-		userpic:"/static/Dr. Von Neumann.jpeg",
-		newstime:"日期 时间",
-		isFollow:false,
-		title:"这是一只猫咪",
-		titlepic:"/static/Dr. Von Neumann.jpeg",
-		support:{
-			type:"",
-			support_count:1,
-			unsupport_count:1
-		},
-		comment_count:2,
-		share_num:2,
-	}];
-	import topicList from "@/components/shop/topicList.vue";
-	import hotCat from "@/components/shop/hot-cat.vue";
-	import uniIcons from "@/components/uni-ui/uni-icons/uni-icons.vue";
-	import uniNavBar from "@/components/uni-ui/uni-nav-bar/uni-nav-bar.vue";
-	import loadMore from "@/components/common/load-more.vue";
-	import commonList from "@/components/common/common-list.vue";
+
+	import uniNavBar from '@/components/uni-ui/uni-nav-bar/uni-nav-bar.vue';
+	import commonList from '@/components/common/common-list.vue';
+	import loadMore from '@/components/common/load-more.vue';
+	
+	import hotCate from '@/components/news/hot-cate.vue';
+	import topicList from '@/components/news/topic-list.vue';
+	import noThing from '@/components/common/no-thing.vue';
 	export default {
 		components: {
-			topicList,
-			hotCat,
-			uniIcons,
 			uniNavBar,
-			loadMore,
 			commonList,
-			uniFab
-			
+			loadMore,
+			hotCate,
+			topicList,
+			noThing
 		},
 		data() {
 			return {
@@ -134,116 +92,137 @@
 				},{
 					name:"话题"
 				}],
-				list:[ ],
+				// 关注列表
+				list:[],
+				// 1.上拉加载更多  2.加载中... 3.没有更多了
 				loadmore:"上拉加载更多",
+				page:1,
 				
-				hotCat:[{
-					name:"关注"
-				},{
-					name:"推荐"
-				},{
-					name:"周围"
-				},{
-					name:"测试"
-				},{
-					name:"测试"
-				},{
-					name:"测试"
-				}],
+				hotCate:[],
 				
-				topicList:[{
-					cover:"/static/Dr. Von Neumann.jpeg",
-					title:"话题名称",
-					desc:"话题描述",
-					news_count:10
+				topicList:[],
 				
-				},{
-					cover:"/static/Dr. Von Neumann.jpeg",
-					title:"话题名称",
-					desc:"话题描述",
-					news_count:10
-					
-					
-				},{
-					cover:"/static/Dr. Von Neumann.jpeg",
-					title:"话题名称",
-					desc:"话题描述",
-					news_count:10
-				
-				},{
-					cover:"/static/Dr. Von Neumann.jpeg",
-					title:"话题名称",
-					desc:"话题描述",
-					news_count:10
-				
-				}],
-				fabPattern:{
-					buttonColor: "#7b5aa6"
-				},
+				swiperList:[]
 			}
 		},
 		onLoad() {
 			uni.getSystemInfo({
-				success: res => {
+				success:res=>{
 					this.scrollH = res.windowHeight - res.statusBarHeight - 44
 				}
 			})
-			this.list = demo
-		}, 
+			// 获取数据
+			this.getTopicNav()
+			this.getSwipers()
+			this.getHotTopic()
+		},
+		onShow() {
+			this.page = 1
+			this.getList()
+		},
 		methods: {
-			//打开发布
+			// 获取关注好友文章列表
+			getList(){
+				let isrefresh = this.page === 1
+				this.$H.get('/followpost/'+this.page,{},{
+					token:true,
+					notoast:true
+				}).then(res=>{
+					let list = res.list.map(v=>{
+						return this.$U.formatCommonList(v)
+					})
+					this.list = isrefresh ? list : [...this.list,...list];
+					this.loadmore  = list.length < 10 ? '没有更多了' : '上拉加载更多';
+				}).catch(err=>{
+					if(!isrefresh){
+						this.page--;
+					}
+				})
+			},
+			// 获取热门分类
+			getTopicNav(){
+				this.$H.get('/topicclass').then(res=>{
+					this.hotCate = res.list.map(item=>{
+						return {
+							id:item.id,
+							name:item.classname
+						}
+					})
+				})
+			},
+			// 获取热门话题
+			getHotTopic(){
+				this.$H.get('/hottopic').then(res=>{
+					this.topicList = res.list.map(item=>{
+						return {
+							id:item.id,
+							cover:item.titlepic,
+							title:item.title,
+							desc:item.desc,
+							today_count:item.todaypost_count,
+							news_count:item.post_count
+						}
+					})
+				})
+			},
+			// 获取轮播图
+			getSwipers(){
+				this.$H.get('/adsense/0').then(res=>{
+					this.swiperList = res.list
+				})
+			},
+			// 打开发布页
 			openAddInput(){
 				uni.navigateTo({
 					url: '../add-input/add-input',
 				});
 			},
-			//打开选项卡
+			// 切换选项卡
 			changeTab(index){
 				this.tabIndex = index
-				
 			},
-			//监听滑动
+			// 滑动
 			onChangeTab(e){
 				this.tabIndex = e.detail.current
 			},
-			//顶踩臭狗
+			// 顶踩操作
 			doSupport(e){
+				// 拿到当前对象
 				let item = this.list[e.index]
-				if (item.support.type === ""){
-					item.support.type = e.type
+				let msg = e.type === 'support' ? '顶' : '踩'
+				// 之前没有操作过
+				if (item.support.type === '') {
 					item.support[e.type+'_count']++
-					return;
-				}
-				if (item.support.type === "support" && e.type === "unsupport"){
-					item.support.type = e.type;
+				} else if (item.support.type ==='support' && e.type === 'unsupport') {
+					// 顶 - 1
 					item.support.support_count--;
+					// 踩 + 1
 					item.support.unsupport_count++;
-					
-				} else if (item.support.type === "unsupport" && e.type === "support"){
-					item.support.type = e.type;
-					item.support.unsupport_count--;
+				} else if(item.support.type ==='unsupport' && e.type === 'support'){ 					// 之前踩了
+					// 顶 + 1
 					item.support.support_count++;
+					// 踩 - 1
+					item.support.unsupport_count--;
 				}
-				else if (item.support.type === e.type){
-					item.support.type = "";
-					item.support[e.type+'_count']--;
-				}
-				
-				console.log(e.type)	
+				item.support.type = e.type
+				uni.showToast({ title: msg + '成功' });
 			},
-			//上拉加载
+			// 上拉加载
 			loadmoreEvent(){
-				if (this.loadmore!== '上拉加载更多') return;
+				// 验证当前是否处于可加载状态
+				if (this.loadmore !== '上拉加载更多') return;
+				// 设置加载状态
 				this.loadmore = '加载中...'
-				//数据请求
-				setTimeout(()=>{
-					//加载页面的数据
-					this.list = [...this.list,...this.list]
-					//恢复加载状态
-					this.loadmore = '上拉加载更多'
-				},2000)
-				
-			}			
+				// 请求数据
+				this.page++
+				this.getList()
+			},
+			// 打开搜索页
+			openSearch(){
+				uni.navigateTo({
+					url: '../search/search?type=topic',
+				});
+			}
 		}
 	}
 </script>
@@ -251,4 +230,3 @@
 <style>
 
 </style>
-

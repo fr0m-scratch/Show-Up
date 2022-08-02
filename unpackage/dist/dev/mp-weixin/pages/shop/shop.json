@@ -2,12 +2,11 @@
   "enablePullDownRefresh": false,
   "navigationStyle": "custom",
   "usingComponents": {
-    "topic-list": "/components/shop/topicList",
-    "hot-cat": "/components/shop/hot-cat",
-    "uni-icons": "/components/uni-ui/uni-icons/uni-icons",
     "uni-nav-bar": "/components/uni-ui/uni-nav-bar/uni-nav-bar",
-    "load-more": "/components/common/load-more",
     "common-list": "/components/common/common-list",
-    "uni-fab": "/components/uni-ui/uni-fab/uni-fab"
+    "load-more": "/components/common/load-more",
+    "hot-cate": "/components/news/hot-cate",
+    "topic-list": "/components/news/topic-list",
+    "no-thing": "/components/common/no-thing"
   }
 }

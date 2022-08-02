@@ -145,7 +145,7 @@
 			// 表单验证
 			validate(){
 				//手机号正则
-				var mPattern = /^1[34578]\d{9}$/; 
+				var mPattern = /^1\d{10}$/; 
 				if (!mPattern.test(this.phone)) {
 					uni.showToast({
 						title: '手机号格式不正确',

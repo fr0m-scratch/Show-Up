@@ -129,7 +129,7 @@ var _default =
 
 /***/ }),
 
-/***/ 61:
+/***/ 62:
 /*!****************************************************************************************************************************!*\
   !*** /Users/jamalcao/Dropbox/My Mac (Jamal’s MacBook Pro)/Desktop/shequ1/main.js?{"page":"components%2Fcommon%2Fdivider"} ***!
   \****************************************************************************************************************************/
@@ -147,5 +147,5 @@ wx.__webpack_require_UNI_MP_PLUGIN__ = __webpack_require__;createPage(_divider.d
 
 /***/ })
 
-},[[61,"common/runtime","common/vendor"]]]);
+},[[62,"common/runtime","common/vendor"]]]);
 //# sourceMappingURL=../../../.sourcemap/mp-weixin/components/common/divider.js.map
