@@ -4,24 +4,32 @@
 		<!-- 头像 关注 -->
 		<view class="flex align-center justify-between">
 			<view class="flex align-center">
-				<image class="rounded-circle mr-2" :src="item.userpic" 
-				style="width: 65rpx; height: 65rpx;" lazy-load
-				@click="openSpace"></image>
+				<image class="rounded-circle mr-2"
+				:src="item.userpic" @click="openSpace(item.user_id)"
+				style="width: 65rpx;height: 65rpx;" 
+				lazy-load></image>
+				<!-- 昵称发布时间 -->
 				<view>
-					<view class="font-sm" style="line-height: 1.5;">{{item.username}}</view>
-					<text class= "font-small text-muted" 
-					style="color: #9d9589; line-height: 1.5;">{{item.newstime}}</text>
+					<view class="font" style="line-height: 1.5;">
+						{{item.username}}
+					</view>
+					<text class="font-sm text-light-muted" 
+					style="line-height: 1.5;">
+						{{item.newstime|formatTime}}
+					</text>
 				</view>
 			</view>
-			<view class="flex align-center justify-center font rounded bg-main text-white animated faster" 
-			v-if="!item.isFollow"
-			hover-class="bounceIn" @click="follow"
-			style="width: 90rpx; height: 50rpx;">
+			<view @click="follow"
+			v-if="!item.isFollow && user.id !== item.user_id"
+			class="flex align-center justify-center rounded bg-main text-white animated faster" 
+			style="width: 90rpx;height: 50rpx;"
+			hover-class="jello"
+			>
 				关注
 			</view>
 		</view>
 		<!-- //标题 -->
-		<view class="font-sm my-1" @click="openDetail">{{item.title}}</view>
+		<view v-if="!isdetail" class="font-sm my-1" @click="openDetail">{{item.title}}</view>
 		<!-- //图片 -->
 		<slot>
 			<view>
@@ -53,6 +61,8 @@
 </template>
 
 <script>
+	import $T from '@/common/time.js';
+	import {mapState} from 'vuex';
 	export default {
 		props:{
 			item:Object,
@@ -65,29 +75,91 @@
 				default:false
 			}
 		},
+		filters: {
+			formatTime(value) {
+				return $T.gettime(value);
+			}
+		},
+		computed: {
+			...mapState({
+				user:state=>state.user
+			})
+		},
 		methods:{
-			openSpace(){
-				console.log("打开个人空间");
-			},
-			follow(){
-				this.$emit('follow',this.index);
-			},
-			openDetail(){
+			openSpace(user_id) {
 				uni.navigateTo({
-					url:'/pages/detail/detail?detail=' +  JSON.stringify(this.item)
-				})
-			},
-			doSupport(type){
-				this.$emit('doSupport',{
-					type:type,
-					index:this.index
+					url: '/pages/user-space/user-space?user_id='+user_id,
 				});
 			},
-			doComment(){
-				if (!this.isdetail){
-					return this.openDetail()
+			follow(){
+				this.checkAuth(()=>{
+					this.$H.post('/follow',{
+						follow_id:this.item.user_id
+					},{
+						token:true
+					}).then(res=>{
+						// 通知更新
+						uni.$emit('updateFollowOrSupport',{
+							type:"follow",
+							data:{
+								user_id:this.item.user_id
+							}
+						})
+					})
+				})
+			},
+			// 进入详情页
+			openDetail(){
+				// 处于详情中
+				if (this.isdetail) return;
+				uni.navigateTo({
+					url: '../../pages/detail/detail?detail='+JSON.stringify(this.item),
+				});
+				// 加入历史记录
+				let list =  uni.getStorageSync('history')
+				list = list ? JSON.parse(list) : []
+				let index = list.findIndex(v=>v.id === this.item.id)
+				if(index === -1){
+					list.unshift(this.item)
+					uni.setStorageSync('history',JSON.stringify(list))
 				}
-				this.$emit('doComment')
+			},
+			// 顶踩操作
+			doSupport(type){
+				this.checkAuth(()=>{
+					this.$H.post('/support',{
+						post_id:this.item.id,
+						type:type === 'support' ? 0 : 1
+					},{
+						token:true,
+						native:true
+					}).then(res=>{
+						if(res.data.errorCode){
+							return uni.showToast({
+								title:res.data.msg,
+								icon: 'none'
+							});
+						}
+						console.log('通知父组件');
+						// 通知父组件
+						uni.$emit('updateFollowOrSupport',{
+							type:"support",
+							data:{
+								type:type,
+								id:this.item.id
+							}
+						})
+					})
+				})
+			},
+			// 评论
+			doComment(){
+				this.checkAuth(()=>{
+					if (!this.isdetail) {
+						return this.openDetail()
+					}
+					this.$emit('doComment')
+				})
 			}
 			
 				

@@ -1,5 +1,10 @@
 {
   "navigationStyle": "custom",
+  "navigationBarTitleText": "我的",
   "enablePullDownRefresh": false,
-  "usingComponents": {}
+  "usingComponents": {
+    "uni-list-item": "/components/uni-ui/uni-list-item/uni-list-item",
+    "other-login": "/components/common/other-login",
+    "uni-nav-bar": "/components/uni-ui/uni-nav-bar/uni-status-bar"
+  }
 }

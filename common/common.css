@@ -1,15 +1,11 @@
+
+/* 本项目公共样式 */
 .bg-main{
-	background-color: #7b5aa6;
+	background-color: #7b5aa6!important;
 }
-
 .bg-main-disabled{
-	background-color: #d1b7f7;
+	background-color: #d1b7f7!important;
 }
-
 .text-main{
-	color: #7b5aa6;
-}
-
-.text-master{
-	color: #a353a6;
+	color: #7b5aa6!important;
 }

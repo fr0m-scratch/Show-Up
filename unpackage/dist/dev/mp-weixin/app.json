@@ -12,7 +12,13 @@
     "pages/topic-nav/topic-nav",
     "pages/detail/detail",
     "pages/user-list/user-list",
-    "pages/user-chat/user-chat"
+    "pages/user-chat/user-chat",
+    "pages/user-set/user-set",
+    "pages/about/about",
+    "pages/login/login",
+    "pages/user-email/user-email",
+    "pages/user-userinfo/user-userinfo",
+    "pages/user-safe/user-safe"
   ],
   "subPackages": [],
   "window": {

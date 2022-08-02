@@ -5,10 +5,9 @@
 </template>
 
 <script>
-	export default{
-		props:['loadmore']
+	export default {
+		props: ['loadmore']
 	}
-
 </script>
 
 <style>

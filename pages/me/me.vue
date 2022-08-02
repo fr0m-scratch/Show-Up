@@ -1,18 +1,26 @@
 <template>
 	<view>
-		<uni-nav-bar backgroundColor="#7b5aa6" color="#cbd3da"
-		title="我的" rightIcon="more-filled" @clickLeft="userSet" statusBar>
-		</uni-nav-bar>
-		<view class="flex align-center p-2" hover-class="bg-light">
-			<image src="/static/cat.jpeg"
-			style="width: 100rpx;height: 100rpx;"
-			class="rounded-circle"></image>
+		<uniNavBar></uniNavBar>
+		<!-- 未登录 -->
+		<template v-if="!loginStatus">
+			<view class="flex align-center justify-center py-2 font-lg text-main">
+				登录北美留学圈，体验更多功能
+			</view>
+			<view class="flex align-center justify-center py-2 font text-secondary bg-light"  @click="openLogin">
+				邮箱/微信/手机登录 <text class="gg-enter ml-1"></text>
+			</view>
+		</template>
+
+		<!-- 已登录 -->
+		<view v-else class="flex align-center justify-between p-2" hover-class="bg-light">
+			<image :src="avatar"
+			style="width: 120rpx;height: 120rpx;"
+			class="rounded-circle mr-2"></image>
 			<view class="flex flex-column flex-1 px-2">
 				<text class="font-lg font-weight-bold text-dark">{{user.username}}</text>
 				<text class="font text-muted">
 					总帖子{{myData[0].num}}  今日发帖{{myData[1].num}}</text>
 			</view>
-			<text class="gg-chevron-right text-light-muted"></text>
 		</view>
 		
 		<view class="flex align-center px-3 py-2">
@@ -23,15 +31,17 @@
 			</view>
 		</view>
 		
+		
+		
 		<uni-list-item title="浏览历史" showExtraIcon @click="openHistory">
-			<text slot="icon" class="gg-eye"></text>
+			<text slot="icon" class="iconfont icon-liulan"></text>
 		</uni-list-item>
-		<uni-list-item title="社区认证" showExtraIcon>
-			<text slot="icon" class="gg-eye"></text>
+		
+		<navigator url="../user-email/user-email" hover-class="none">
+		<uni-list-item title="学生身份认证" showExtraIcon>
+			<text slot="icon" class="iconfont icon-huiyuanvip"></text>
 		</uni-list-item>
-		<uni-list-item title="审核帖子" showExtraIcon>
-			<text slot="icon" class="gg-airplane"></text>
-		</uni-list-item>
+		</navigator>
 	
 		<navigator url="../user-set/user-set" hover-class="none">
 		<uni-list-item title="我的设置" showExtraIcon>
@@ -39,20 +49,21 @@
 		</uni-list-item>
 		</navigator>
 		
+		
+		
 	</view>
-</template>	
-		
-		
+</template>
+
 <script>
-	import uniNavBar from "@/components/uni-ui/uni-nav-bar/uni-nav-bar.vue";
 	import uniListItem from '@/components/uni-ui/uni-list-item/uni-list-item.vue';
-	// import otherLogin from '@/components/common/other-login.vue';
+	import otherLogin from '@/components/common/other-login.vue';
 	import { mapState } from 'vuex'
+	import uniNavBar from "@/components/uni-ui/uni-nav-bar/uni-status-bar.vue"
 	export default {
 		components: {
-			uniNavBar,
-			uniListItem
-			// otherLogin
+			uniListItem,
+			otherLogin,
+			uniNavBar
 		},
 		data() {
 			return {
@@ -71,7 +82,7 @@
 				}]
 			}
 		},
-		userSet(){
+		onNavigationBarButtonTap() {
 			uni.navigateTo({
 				url: '../user-set/user-set'
 			});
@@ -130,5 +141,8 @@
 			}
 		}
 	}
-</script>		
-	
+</script>
+
+<style>
+
+</style>
