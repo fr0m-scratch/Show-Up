@@ -26,39 +26,7 @@
 				</scroll-view>
 			</swiper-item>
 			<!-- 话题 -->
-			<swiper-item>
-				<scroll-view scroll-y="true" :style="'height:'+scrollH+'px;'">
-					
-					<!-- 热门分类 -->
-					<hot-cate :hotCate="hotCate"></hot-cate>
-					<!-- 搜索框 -->
-					<view class="p-2">
-						<view class="bg-light rounded flex align-center justify-center py-2 text-secondary" @click="openSearch">
-							<text class="iconfont icon-sousuo mr-2"></text>
-							搜索话题
-						</view>
-					</view>
-					<!-- 轮播图 -->
-					<swiper class="px-2 pb-2" :indicator-dots="true" 
-					:autoplay="true" 
-					:interval="3000" :duration="1000">
-						<swiper-item v-for="(item,index) in swiperList"
-						:key="index">
-							<image :src="item.src"
-							style="height: 300rpx;" 
-							class="w-100 rounded"></image>
-						</swiper-item>
-					</swiper>
-					<divider></divider>
-					<!-- 最近更新 -->
-					<view class="p-2 font-md">最近更新</view>
-					<!-- 话题列表组件 -->
-					<block v-for="(item,index) in topicList" :key="index">
-						<topic-list :item="item" :index="index"></topic-list>
-					</block>
-					
-				</scroll-view>
-			</swiper-item>
+			
 		</swiper>
 		
 		
@@ -88,9 +56,7 @@
 				scrollH:500,
 				tabIndex:0,
 				tabBars:[{
-					name:"关注"
-				},{
-					name:"话题"
+					name:"关注动态"
 				}],
 				// 关注列表
 				list:[],

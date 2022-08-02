@@ -19,7 +19,10 @@
     "pages/user-email/user-email",
     "pages/user-userinfo/user-userinfo",
     "pages/user-safe/user-safe",
-    "pages/user-space/user-space"
+    "pages/user-space/user-space",
+    "pages/history/history",
+    "pages/user-password/user-password",
+    "pages/user-phone/user-phone"
   ],
   "subPackages": [],
   "window": {

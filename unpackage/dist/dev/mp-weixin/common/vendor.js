@@ -5172,57 +5172,6 @@ module.exports = index_cjs;
 
 /***/ }),
 
-/***/ 161:
-/*!**************************************************************************************************************************!*\
-  !*** /Users/jamalcao/Dropbox/My Mac (Jamal’s MacBook Pro)/Desktop/shequ1/components/uni-ui/uni-search-bar/i18n/index.js ***!
-  \**************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 162));
-var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 163));
-var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 164));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
-{
-  en: _en.default,
-  'zh-Hans': _zhHans.default,
-  'zh-Hant': _zhHant.default };exports.default = _default;
-
-/***/ }),
-
-/***/ 162:
-/*!*************************************************************************************************************************!*\
-  !*** /Users/jamalcao/Dropbox/My Mac (Jamal’s MacBook Pro)/Desktop/shequ1/components/uni-ui/uni-search-bar/i18n/en.json ***!
-  \*************************************************************************************************************************/
-/*! exports provided: uni-search-bar.cancel, uni-search-bar.placeholder, default */
-/***/ (function(module) {
-
-module.exports = JSON.parse("{\"uni-search-bar.cancel\":\"cancel\",\"uni-search-bar.placeholder\":\"Search enter content\"}");
-
-/***/ }),
-
-/***/ 163:
-/*!******************************************************************************************************************************!*\
-  !*** /Users/jamalcao/Dropbox/My Mac (Jamal’s MacBook Pro)/Desktop/shequ1/components/uni-ui/uni-search-bar/i18n/zh-Hans.json ***!
-  \******************************************************************************************************************************/
-/*! exports provided: uni-search-bar.cancel, uni-search-bar.placeholder, default */
-/***/ (function(module) {
-
-module.exports = JSON.parse("{\"uni-search-bar.cancel\":\"cancel\",\"uni-search-bar.placeholder\":\"请输入搜索内容\"}");
-
-/***/ }),
-
-/***/ 164:
-/*!******************************************************************************************************************************!*\
-  !*** /Users/jamalcao/Dropbox/My Mac (Jamal’s MacBook Pro)/Desktop/shequ1/components/uni-ui/uni-search-bar/i18n/zh-Hant.json ***!
-  \******************************************************************************************************************************/
-/*! exports provided: uni-search-bar.cancel, uni-search-bar.placeholder, default */
-/***/ (function(module) {
-
-module.exports = JSON.parse("{\"uni-search-bar.cancel\":\"cancel\",\"uni-search-bar.placeholder\":\"請輸入搜索內容\"}");
-
-/***/ }),
-
 /***/ 17:
 /*!********************************************************************************************!*\
   !*** /Users/jamalcao/Dropbox/My Mac (Jamal’s MacBook Pro)/Desktop/shequ1/common/config.js ***!
@@ -5349,6 +5298,57 @@ var _index = _interopRequireDefault(__webpack_require__(/*! @/store/index.js */ 
 
   } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+
+/***/ 185:
+/*!**************************************************************************************************************************!*\
+  !*** /Users/jamalcao/Dropbox/My Mac (Jamal’s MacBook Pro)/Desktop/shequ1/components/uni-ui/uni-search-bar/i18n/index.js ***!
+  \**************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _en = _interopRequireDefault(__webpack_require__(/*! ./en.json */ 186));
+var _zhHans = _interopRequireDefault(__webpack_require__(/*! ./zh-Hans.json */ 187));
+var _zhHant = _interopRequireDefault(__webpack_require__(/*! ./zh-Hant.json */ 188));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
+{
+  en: _en.default,
+  'zh-Hans': _zhHans.default,
+  'zh-Hant': _zhHant.default };exports.default = _default;
+
+/***/ }),
+
+/***/ 186:
+/*!*************************************************************************************************************************!*\
+  !*** /Users/jamalcao/Dropbox/My Mac (Jamal’s MacBook Pro)/Desktop/shequ1/components/uni-ui/uni-search-bar/i18n/en.json ***!
+  \*************************************************************************************************************************/
+/*! exports provided: uni-search-bar.cancel, uni-search-bar.placeholder, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("{\"uni-search-bar.cancel\":\"cancel\",\"uni-search-bar.placeholder\":\"Search enter content\"}");
+
+/***/ }),
+
+/***/ 187:
+/*!******************************************************************************************************************************!*\
+  !*** /Users/jamalcao/Dropbox/My Mac (Jamal’s MacBook Pro)/Desktop/shequ1/components/uni-ui/uni-search-bar/i18n/zh-Hans.json ***!
+  \******************************************************************************************************************************/
+/*! exports provided: uni-search-bar.cancel, uni-search-bar.placeholder, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("{\"uni-search-bar.cancel\":\"cancel\",\"uni-search-bar.placeholder\":\"请输入搜索内容\"}");
+
+/***/ }),
+
+/***/ 188:
+/*!******************************************************************************************************************************!*\
+  !*** /Users/jamalcao/Dropbox/My Mac (Jamal’s MacBook Pro)/Desktop/shequ1/components/uni-ui/uni-search-bar/i18n/zh-Hant.json ***!
+  \******************************************************************************************************************************/
+/*! exports provided: uni-search-bar.cancel, uni-search-bar.placeholder, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("{\"uni-search-bar.cancel\":\"cancel\",\"uni-search-bar.placeholder\":\"請輸入搜索內容\"}");
 
 /***/ }),
 
@@ -5513,7 +5513,38 @@ var _index = _interopRequireDefault(__webpack_require__(/*! @/store/index.js */ 
 
 /***/ }),
 
-/***/ 196:
+/***/ 2:
+/*!***********************************!*\
+  !*** (webpack)/buildin/global.js ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || new Function("return this")();
+} catch (e) {
+	// This works if the window reference is available
+	if (typeof window === "object") g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
+
+/***/ 259:
 /*!****************************************************************************************************************!*\
   !*** /Users/jamalcao/Dropbox/My Mac (Jamal’s MacBook Pro)/Desktop/shequ1/components/uni-ui/uni-icons/icons.js ***!
   \****************************************************************************************************************/
@@ -6690,38 +6721,7 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 
-/***/ 2:
-/*!***********************************!*\
-  !*** (webpack)/buildin/global.js ***!
-  \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || new Function("return this")();
-} catch (e) {
-	// This works if the window reference is available
-	if (typeof window === "object") g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-
-/***/ }),
-
-/***/ 250:
+/***/ 279:
 /*!************************************************************************************************************************************!*\
   !*** /Users/jamalcao/Dropbox/My Mac (Jamal’s MacBook Pro)/Desktop/shequ1/components/uni-ui/mpvue-citypicker/city-data/province.js ***!
   \************************************************************************************************************************************/
@@ -6871,7 +6871,7 @@ provinceData;exports.default = _default;
 
 /***/ }),
 
-/***/ 251:
+/***/ 280:
 /*!********************************************************************************************************************************!*\
   !*** /Users/jamalcao/Dropbox/My Mac (Jamal’s MacBook Pro)/Desktop/shequ1/components/uni-ui/mpvue-citypicker/city-data/city.js ***!
   \********************************************************************************************************************************/
@@ -8385,7 +8385,7 @@ cityData;exports.default = _default;
 
 /***/ }),
 
-/***/ 252:
+/***/ 281:
 /*!********************************************************************************************************************************!*\
   !*** /Users/jamalcao/Dropbox/My Mac (Jamal’s MacBook Pro)/Desktop/shequ1/components/uni-ui/mpvue-citypicker/city-data/area.js ***!
   \********************************************************************************************************************************/
@@ -20938,7 +20938,7 @@ areaData;exports.default = _default;
 
 /***/ }),
 
-/***/ 292:
+/***/ 296:
 /*!*******************************************************************************************************************************!*\
   !*** /Users/jamalcao/Dropbox/My Mac (Jamal’s MacBook Pro)/Desktop/shequ1/components/uni-ui/uni-transition/createAnimation.js ***!
   \*******************************************************************************************************************************/

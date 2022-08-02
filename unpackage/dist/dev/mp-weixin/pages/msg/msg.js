@@ -98,7 +98,7 @@ var components
 try {
   components = {
     msgList: function() {
-      return __webpack_require__.e(/*! import() | components/msg-list/msg-list */ "components/msg-list/msg-list").then(__webpack_require__.bind(null, /*! @/components/msg-list/msg-list.vue */ 206))
+      return __webpack_require__.e(/*! import() | components/msg-list/msg-list */ "components/msg-list/msg-list").then(__webpack_require__.bind(null, /*! @/components/msg-list/msg-list.vue */ 222))
     }
   }
 } catch (e) {
@@ -206,7 +206,7 @@ var demo = [{
   username: "kk",
   update_time: 1657264852,
   data: "neirongjjjjjjjjjjjjjjjjjjjjkkkkkkkkkkjjjjjjjjjjjjjjjjj",
-  unread: 2 }];var uniNavBar = function uniNavBar() {__webpack_require__.e(/*! require.ensure | components/uni-ui/uni-nav-bar/uni-nav-bar */ "components/uni-ui/uni-nav-bar/uni-nav-bar").then((function () {return resolve(__webpack_require__(/*! @/components/uni-ui/uni-nav-bar/uni-nav-bar.vue */ 199));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var msgList = function msgList() {__webpack_require__.e(/*! require.ensure | components/msg-list/msg-list */ "components/msg-list/msg-list").then((function () {return resolve(__webpack_require__(/*! @/components/msg-list/msg-list.vue */ 206));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var noThing = function noThing() {__webpack_require__.e(/*! require.ensure | components/common/no-thing */ "components/common/no-thing").then((function () {return resolve(__webpack_require__(/*! @/components/common/no-thing.vue */ 146));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+  unread: 2 }];var uniNavBar = function uniNavBar() {__webpack_require__.e(/*! require.ensure | components/uni-ui/uni-nav-bar/uni-nav-bar */ "components/uni-ui/uni-nav-bar/uni-nav-bar").then((function () {return resolve(__webpack_require__(/*! @/components/uni-ui/uni-nav-bar/uni-nav-bar.vue */ 205));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var msgList = function msgList() {__webpack_require__.e(/*! require.ensure | components/msg-list/msg-list */ "components/msg-list/msg-list").then((function () {return resolve(__webpack_require__(/*! @/components/msg-list/msg-list.vue */ 222));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var noThing = function noThing() {__webpack_require__.e(/*! require.ensure | components/common/no-thing */ "components/common/no-thing").then((function () {return resolve(__webpack_require__(/*! @/components/common/no-thing.vue */ 158));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 
 
 

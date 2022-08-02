@@ -4,7 +4,7 @@
 			"path": "pages/index/index",
 			"style": 
 			{
-				"navigationBarTitleText": "校友圈"
+				"navigationBarTitleText": "北美留学圈"
 			}
 		}
 	    ,{
@@ -171,6 +171,33 @@
         }
         ,{
             "path" : "pages/user-space/user-space",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/history/history",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/user-password/user-password",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/user-phone/user-phone",
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "",

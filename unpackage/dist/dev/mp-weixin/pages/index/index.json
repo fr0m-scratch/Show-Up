@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "校友圈",
+  "navigationBarTitleText": "北美留学圈",
   "usingComponents": {
     "common-list": "/components/common/common-list",
     "load-more": "/components/common/load-more",
