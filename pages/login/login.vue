@@ -48,13 +48,7 @@
 			<view class="text-primary font-sm">登录遇到问题</view>
 		</view>
 		
-		<view class="flex align-center justify-center">
-			<view style="height: 1rpx;background-color: #dddddd;width: 100rpx;"></view>
-			<view class="mx-2 text-muted">社交账号登录</view>
-			<view style="height: 1rpx;background-color: #dddddd;width: 100rpx;"></view>
-		</view>
 		
-		<other-login back></other-login>
 		
 		<view class="flex align-center justify-center text-muted">
 			注册即代表同意<text class="text-main">《北美留学圈社区协议》</text>

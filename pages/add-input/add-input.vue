@@ -176,6 +176,7 @@
 					});
 				}).catch(err=>{
 					uni.hideLoading()
+					console.log(imgListIds)
 				})
 			},
 			// 获取所有文章分类

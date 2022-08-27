@@ -10,7 +10,7 @@
 					<block v-for="(image,index) in imageList" :key="index">
 						
 						<view class="uni-uploader__file position-relative">
-							<image class="uni-uploader__img rounded" :src="image" :data-src="image" @tap="previewImage" mode="aspectFill"></image>
+							<image class="uni-uploader__img rounded" :src="image.url" :data-src="image" @tap="previewImage" mode="aspectFill"></image>
 							<view class="bg-dark position-absolute del-pos" @click="deleteImage">
 							<view class="gg-trash text-white" ></view>
 							</view>
@@ -119,8 +119,18 @@
 					sizeType: sizeType[this.sizeTypeIndex],
 					count: this.imageList.length + this.count[this.countIndex] > 9 ? 9 - this.imageList.length : this.count[this.countIndex],
 					success: (res) => {
-						this.imageList = this.imageList.concat(res.tempFilePaths);
-						this.$emit('change', this.imageList)
+						res.tempFilePaths.forEach(item=>{
+							console.log(JSON.stringify(item))
+							this.$H.upload('/image/uploadmore',{
+								filePath: item,
+								name: 'imglist[]',
+								token:true
+							}).then(result=>{
+								console.log(result.data.list[0])
+								this.imageList.push(result.data.list[0])
+								this.$emit('change',this.imageList)
+							})
+						})
 					},
 					fail: (err) => {
 						console.log("err: ",err);

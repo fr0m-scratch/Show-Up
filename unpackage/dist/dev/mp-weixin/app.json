@@ -37,27 +37,27 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "feed",
-        "iconPath": "./static/shop.png",
-        "selectedIconPath": "./static/shoped.png"
+        "text": "首页",
+        "iconPath": "./static/feed.png",
+        "selectedIconPath": "./static/feeded.png"
       },
       {
         "pagePath": "pages/shop/shop",
-        "text": "thrift",
-        "iconPath": "./static/shop.png",
-        "selectedIconPath": "./static/shoped.png"
+        "text": "关注",
+        "iconPath": "./static/follow.png",
+        "selectedIconPath": "./static/followed.png"
       },
       {
         "pagePath": "pages/msg/msg",
-        "text": "message",
-        "iconPath": "static/imessage.png",
-        "selectedIconPath": "static/icons8-messages-50.png"
+        "text": "信息",
+        "iconPath": "static/msg.png",
+        "selectedIconPath": "static/msged.png"
       },
       {
         "pagePath": "pages/me/me",
-        "text": "me",
-        "iconPath": "./static/shop.png",
-        "selectedIconPath": "./static/shoped.png"
+        "text": "我的",
+        "iconPath": "./static/me.png",
+        "selectedIconPath": "./static/meed.png"
       }
     ]
   },

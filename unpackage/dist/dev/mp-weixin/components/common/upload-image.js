@@ -235,8 +235,18 @@ var sizeType = [
                   sizeType: sizeType[this.sizeTypeIndex],
                   count: this.imageList.length + this.count[this.countIndex] > 9 ? 9 - this.imageList.length : this.count[this.countIndex],
                   success: function success(res) {
-                    _this2.imageList = _this2.imageList.concat(res.tempFilePaths);
-                    _this2.$emit('change', _this2.imageList);
+                    res.tempFilePaths.forEach(function (item) {
+                      console.log(JSON.stringify(item));
+                      _this2.$H.upload('/image/uploadmore', {
+                        filePath: item,
+                        name: 'imglist[]',
+                        token: true }).
+                      then(function (result) {
+                        console.log(result.data.list[0]);
+                        _this2.imageList.push(result.data.list[0]);
+                        _this2.$emit('change', _this2.imageList);
+                      });
+                    });
                   },
                   fail: function fail(err) {
                     console.log("err: ", err);

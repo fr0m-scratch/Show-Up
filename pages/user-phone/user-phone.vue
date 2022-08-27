@@ -30,7 +30,7 @@
 		},
 		methods: {
 			check(){
-				var rule = /^1[34578]\d{9}$/; 
+				var rule = /^1[345789]\d{9}$/; 
 				if (!rule.test(this.phone)) {
 					uni.showToast({
 						title:"手机号格式不正确",

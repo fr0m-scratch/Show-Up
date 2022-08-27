@@ -5181,7 +5181,7 @@ module.exports = index_cjs;
 
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
-  webUrl: 'http://8.142.72.26/api/v1',
+  webUrl: 'https://shequapi.xyz/api/v1',
   websocketUrl: '' };exports.default = _default;
 
 /***/ }),
